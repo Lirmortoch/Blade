@@ -649,7 +649,7 @@ button {
     .header__menu .footer, .nav__mobile-separator {
         display: block;
     }
-
+    /* ------------------------------------------------------------------------------------------------------ */
     .menu__toggler {
         display: flex;
         align-items: center;
@@ -688,6 +688,20 @@ button {
         width: 19.38px;
         margin-left: auto;
     }
+
+    .menu__toggler.active-mobile span {
+        transform: translate(5vw, -50%);
+    }
+    .menu__toggler.active-mobile ::before {
+        top: 50%;
+        transform: rotate(-45deg) translate(-23%, 101%);
+    }
+    .menu__toggler.active-mobile ::after {
+        bottom: 50%;
+        transform: rotate(45deg) translate(-25%, -100%);
+    }
+    /* ------------------------------------------------------------------------------------------------------ */
+    
     .bfw {
         left: -2.6vw;
         width: 119.792vw;
