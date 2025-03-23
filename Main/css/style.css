@@ -81,13 +81,13 @@ button {
     content: '';
 
     height: 0.889em;
-    width: 6.667em;
+    width: 137.409%;
 
     position: absolute;
     z-index: -1;
 
     top: 0.556em;
-    left: -0.95em;
+    left: -18.5%;
 
     background-color: var(--third-color);
     opacity: 0.75;
