@@ -1,0 +1,9 @@
+@import url('../css/general.css');
+
+html {
+    --main-color: #303030;
+    --second-color: #ffffff;
+    --third-color: #f2c03f;
+
+    --main-background: #ffffff;
+}

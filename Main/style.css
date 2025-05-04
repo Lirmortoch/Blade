@@ -1,6 +1,4 @@
 @import url('../css/general.css');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 /* Common styles */
 html {
@@ -18,17 +16,16 @@ html {
     grid-template-rows: 27px repeat(2, min-content);
 }
 
+/* Header styles */ 
+.header__logo {
+    background-color: var(--main-color);
+}
+
 /* BFW styles */
-.bfw {
+.bfw:not(.mobile-bfw) {
     width: 70vw;
-    position: absolute;
     top: 4.427vw;
     left: 0;
-    z-index: -1;
-}
-.bfw img {
-    width: 100%;
-    height: 100%;
 }
 
 /* Main block and main-wrap styles */
@@ -47,7 +44,6 @@ html {
 
 /* Title and tag styles */
 .mtb__tag {
-    color: var(--third-color);
     margin: 6.927vw 0 0 0;
 }
 .mtb__title {
@@ -193,7 +189,7 @@ html {
     margin-top: 5.833vw;
   }
 
-  .bfw {
+  .bfw:not(.mobile-bfw) {
     width: 69.6vw;
   }
 }
@@ -202,13 +198,13 @@ html {
         gap: 2em;
     }
 
-    .bfw {
+    .bfw:not(.mobile-bfw) {
         /* left: -2.6vw; */
         top: 4.8vw;
     }
 }
 @media screen and (max-width: 1500px) {
-    .bfw {
+    .bfw:not(.mobile-bfw) {
         /* left: -3.3vw; */
         top: 5.4vw;
     }
@@ -251,22 +247,13 @@ html {
         right: max(-22%, -93px); 
     }
 
-    .bfw {
+    .bfw:not(.mobile-bfw) {
         left: -2.6vw;
         width: 119.792vw;
         object-fit: cover;
     }
-    .mobile-bfw {
-        width: 122vw;
-        top: 180px;
-        left: -4vw;
-        object-fit: cover;
-    }
 }
 @media screen and (max-width: 799px) {
-    .bfw {
-        width: 119.792vw;
-    }
     .bfw:not(.mobile-bfw) {
         top: max(3vw, 25px);
     }
