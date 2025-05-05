@@ -236,6 +236,10 @@ html {
         overflow-x: clip;
     }
  
+    .menu__toggler-wrap::after, .menu__toggler-wrap::before, .menu__toggler-wrap span {
+        background-color: #ffffff;
+    }
+
     .right-side-decor__photo, .right-side-decor__frame {
         width: 52vw;
     }

@@ -25,7 +25,7 @@ button {
 .button {
     opacity: 0.64;
     background-color: transparent;
-    color: white;
+    color: var(--main-color);
 }
 .title {
     font-family: var(--second-family);
@@ -133,7 +133,7 @@ button {
 }
 .current-language::after {
     content: '';
-    background-image: url('/Main/img/icons/checkmark.svg');
+    background-image: url('../img/icons/checkmark.svg');
     width: 12px;
     height: 9px;
 
@@ -188,12 +188,19 @@ button {
 
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-top: 7px solid white;
+    border-top: 7px solid var(--main-color);
 
     transition: all 0.3s ease 0s;
 }
 .caret__rotate {
     transform: rotate(180deg);
+}
+
+/* Mobile language switcher styles */
+.mobile-lang-switch {
+    position: relative;
+    left: 100%;
+    transition: left 0.3s ease 0s;
 }
 
 /* Wrap styles */
@@ -292,7 +299,7 @@ button {
     }
 }
 @media screen and (min-width: 1299px) {
-    .footer-mobile, .mobile-lang-switch, .nav__mobile-separator, .mobile-bfw, .menu__mobile-back {
+    .footer-mobile, .nav__mobile-separator, .mobile-bfw, .menu__mobile-back {
         display: none;
     }
 }
@@ -323,11 +330,13 @@ button {
         margin-left: auto;
         margin-right: 47.66px;
     }
+    .mobile-lang-switch.active-mobile {
+        left: 0;
+    }
 
     /* Header styles */
     .header {
         height: 92px;
-        justify-content: start;
     }
     .header__logo {
         z-index: 4;
@@ -394,8 +403,6 @@ button {
         margin-bottom: 4px;
 
         transition: all 0.3s ease 0s;
-
-        background-color: #ffffff;
     }
     .menu__toggler-wrap::after, .menu__toggler-wrap::before {
         content: '';
@@ -427,6 +434,7 @@ button {
         height: 92px;
         background: linear-gradient(152deg, rgb(101, 78, 163) 24.86%, rgb(95, 75, 139) 100%);
         z-index: 4;
+        transition: left 0.3s ease 0s;
     }
 
     /* Mobile bfw styles */
