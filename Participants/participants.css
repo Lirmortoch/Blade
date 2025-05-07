@@ -8,6 +8,17 @@ html {
     --main-background: #ffffff;
 }
 
+/* Header and navigation styles */
+.header__menu, .menu__toggler {
+   margin-left: auto;
+}
+
+/* tag styles */
+.mtb__tag {
+    margin-top: calc(2.2vw - 0.7%);
+    font-size: 17px;
+}
+
 @media screen and (max-width: 1299px) {
     .menu__toggler-wrap::after, .menu__toggler-wrap::before, .menu__toggler-wrap span {
         background-color: #654EA3;
@@ -16,9 +27,24 @@ html {
         .menu__toggler-wrap::after, .menu__toggler-wrap::before, .menu__toggler-wrap span, .header__logo {
             background-color: #ffffff;
         }
-
-        .header a,  .mobile-lang-switch > * {
-            color: var(--second-color);
+        .menu__toggler {
+            margin-left: 0;
         }
+    }
+    .header a,  .mobile-lang-switch > * {
+        color: var(--second-color);
+    }
+    .mtb__tag {
+        margin-top: calc(2.2vw - 1.0%);
+    }
+}
+@media screen and (max-width: 999px) {
+    .mtb__tag {
+        margin-top: calc(2.2vw - 1.4%);
+    }
+}
+@media screen and (max-width: 799px) {
+    .mtb__tag {
+        display: none;
     }
 }
