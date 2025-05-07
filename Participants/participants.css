@@ -19,6 +19,87 @@ html {
     font-size: 17px;
 }
 
+.wrap {
+}
+.left-side-decor {
+}
+.left-side-decor__line {
+}
+.line {
+}
+.top-line {
+}
+.left-side-decor__data {
+}
+.data {
+}
+.data__hor-line {
+}
+.data__value {
+}
+.bold {
+}
+.data__arrows {
+}
+.bottom-line {
+}
+.main {
+}
+.main__title {
+}
+.title {
+}
+.main__carousel {
+}
+.carousel {
+}
+.carousel__left-key {
+}
+.main__participants {
+}
+.participants {
+}
+.participants__item {
+}
+.participant-item {
+}
+.participant-item__carousel {
+}
+.participant-carousel {
+}
+.participant-carousel__left-key {
+}
+.participant__example {
+}
+.participant-example {
+}
+.participant-example__style {
+}
+.participant-example__model {
+}
+.participant-carousel__right-key {
+}
+.participant__info {
+}
+.participant__photo {
+}
+.participant__full-name {
+}
+.participant__country {
+}
+.participant__links {
+}
+.footer {
+}
+.footer__social-links {
+}
+.social-links {
+}
+.social-links__item {
+}
+.carousel__right-key {
+}
+
 @media screen and (max-width: 1299px) {
     .menu__toggler-wrap::after, .menu__toggler-wrap::before, .menu__toggler-wrap span {
         background-color: #654EA3;
@@ -40,7 +121,7 @@ html {
 }
 @media screen and (max-width: 999px) {
     .mtb__tag {
-        margin-top: calc(2.2vw - 1.4%);
+        margin-top: calc(2.2vw - 1.3%);
     }
 }
 @media screen and (max-width: 799px) {

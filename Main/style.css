@@ -179,14 +179,15 @@ html {
 .photo-switch__item:first-of-type {
     margin-right: 20px;
 }
-.photo-switch__item img {
+.photo-switch__item svg {
     max-width: 100%;
     height: 100%;
     color: var(--main-color);
     transition: 380ms;
+    cursor: pointer;
 }
 .photo-switch__item svg:hover {
-    transform: scale(1.2);
+    transform: scale(1.3);
     color: var(--third-color);
     cursor: pointer;
 }
