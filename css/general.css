@@ -114,25 +114,26 @@ button {
 }
 
 /* Language switcher and dropdown styles */
-.lang-switch__button {
+.desk-lang-switch__display-btn {
     display: flex;
     align-items: center;
     gap: 4px;
 }
-.language-btn {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.64);
-}
-.language-btn:last-child {
+
+.desk-lang-switch__button:last-child {
     border-bottom: none;
 }
-.language-btn {
+.desk-lang-switch__button {
     display: flex;
     align-items: center;
 
     background-color: transparent;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.64);
+
     margin: 16px 13px 16px 16px;
 }
-.current-language::after {
+.current-language-desk::after {
     content: '';
     background-image: url('../img/icons/checkmark.svg');
     width: 12px;
@@ -140,11 +141,11 @@ button {
 
     margin-left: 12px;
 }
-.lang-switch__line {
+.desk-lang-switch__line {
     height: 1px;
     background-color: rgb(48, 48, 48, 0.1);
 }
-.language-btn:not(.language-btn.current-language) {
+.desk-lang-switch__button:not(.desk-lang-switch__button.current-language-desk) {
     margin-right: 0px;
 }
 .language-btn__flag svg {

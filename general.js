@@ -22,7 +22,7 @@ function keepOpenDropMenu(e) {
 
 document.addEventListener('click', keepOpenDropMenu);
 
-// Switch language 
+// Switch language
 function switchLanguage(e) {
     let closestElem = e.target.closest('.language-btn:not(.language-btn.current-language)');
 
@@ -30,17 +30,37 @@ function switchLanguage(e) {
 
     let target = e.target.value ? e.target : closestElem;
 
-    const prevLanguage = document.querySelector('.current-language');
+    const prevLanguage = target.parentElement.querySelector('.current-language');
     const buttonLanguage = document.querySelector('.dropdown__button');
 
-    prevLanguage.classList.remove('current-language');
-    buttonLanguage.innerHTML = target.value + '<span class="lang-switch-btn__arrow caret caret__rotate"></span>';
-    
-    target.classList.add('current-language');
+    const targetMode = target.parentElement.className.match(/desk|mobile/m)[0];
+    const anotherMode = targetMode === 'desk' ? 'mobile' : 'desk';
+    const anotherModePrevLang = document.querySelector(`.${anotherMode}-lang-switch__button[value='${prevLanguage.value}']`);
+    const anotherModeTargetLang = document.querySelector(`.${anotherMode}-lang-switch__button[value='${target.value}']`);
+
+    prevLanguage.classList.toggle('current-language');
+    target.classList.toggle('current-language');
+    anotherModePrevLang.classList.toggle('current-language');
+    anotherModeTargetLang.classList.toggle('current-language');
+
+    prevLanguage.classList.toggle(`current-language-${targetMode}`);
+    target.classList.toggle(`current-language-${targetMode}`);
+    anotherModePrevLang.classList.toggle(`current-language-${anotherMode}`);
+    anotherModeTargetLang.classList.toggle(`current-language-${anotherMode}`);
+
+    if (targetMode === 'mobile') {
+        buttonLanguage.innerHTML = target.value + '<span class="desk-lang-switch-btn__arrow caret"></span>';
+    }
+    else {
+        buttonLanguage.innerHTML = target.value + '<span class="desk-lang-switch-btn__arrow caret caret__rotate"></span>';
+    }
+
+    buttonLanguage.value = target.value;
 }
 
 document.addEventListener('click', switchLanguage);
 
+// Mobile menu
 function toggleMobileMenu(e) {
     const closestElem = e.target.closest('.menu__toggler');
 
@@ -60,12 +80,3 @@ function toggleMobileMenu(e) {
 }
 
 document.addEventListener('click', toggleMobileMenu);
-
-function mobileSwitchLanguage(e) {
-    if (!e.target.classList.contains('mobile-lang-switch__button') || e.target.classList.contains('current-language-mobile')) return;
-
-    document.querySelector('.current-language-mobile').classList.remove('current-language-mobile');
-    e.target.classList.add('current-language-mobile');
-}
-
-document.addEventListener('click', mobileSwitchLanguage);
