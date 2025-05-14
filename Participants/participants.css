@@ -34,32 +34,56 @@ html {
 .main__carousel {
     display: flex;
     flex-flow: row nowrap;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-basis: auto;
 }
-.carousel {
-    
+.carousel > button {
+    height: 64px;
+    width: 32px;
+    background-color: black;
+}
+.carousel button > svg {
+    width: 100%;
+    height: 100%;
+}
+.carousel__right-key {
+    margin-left: 52px;
 }
 .carousel__left-key {
+    margin-right: 52px;
 }
 .main__participants {
     display: flex;
     flex-flow: row nowrap;
-    width: 1000px;
+    width: 1350px;
     overflow: hidden;
+   
 }
 .participants {
     
 }
+
 .participants__item {
+    margin-right: 48px;
+}
+.participants__item:last-of-type {
+    margin-right: 0px;
 }
 .participant-item {
     
 }
 .participant-item__carousel {
 }
-.participant-carousel {
+.participant-item__style {
+}
+.participant-carousel > button {
+    height: 20px;
+    width: 10px;
+    background-color: black;
 }
 .participant-carousel__left-key {
+    
 }
 .participant__example {
 }
@@ -67,11 +91,11 @@ html {
     display: flex;
     flex-flow: row nowrap;
     overflow: hidden;
-    width: 500px;
-}
-.participant-item__style {
+    width: 450px;
 }
 .participant-example__model {
+    width: 448px;
+    height: 580px;
 }
 .participant-carousel__right-key {
 }
@@ -92,8 +116,6 @@ html {
 .social-links {
 }
 .social-links__item {
-}
-.carousel__right-key {
 }
 
 @media screen and (max-width: 1299px) {
