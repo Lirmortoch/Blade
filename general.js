@@ -22,7 +22,7 @@ function keepOpenDropMenu(e) {
 
 document.addEventListener('click', keepOpenDropMenu);
 
-// Switch language (Хрень, надо просто как-то обновлять состояние)
+// Switch language (Хрень, надо просто как-то обновлять состояние и делать рефреш везде на каждой странице)
 function switchLanguage(e) {
     const closestElem = e.target.closest('.language-btn:not(.language-btn.current-language)');
 

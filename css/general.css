@@ -4,12 +4,12 @@
 
 /* Common styles */
 html {
-    --font-family: "Lato", sans-serif;
-    --second-family: "Playfair Display", sans-serif;
+    --main-font-family: "Lato", sans-serif;
+    --second-font-family: "Playfair Display", sans-serif;
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--main-font-family);
     background: var(--main-background);
     font-size: 18px;
     color: var(--main-color);
@@ -28,7 +28,7 @@ button {
     color: var(--main-color);
 }
 .title {
-    font-family: var(--second-family);
+    main-font-family: var(--second-main-font-family);
     font-size: 4em;
 }
 .uppercase {
@@ -495,7 +495,7 @@ button {
         flex-flow: column nowrap;
     }
     .menu__nav a {
-        font-family: var(--second-family);
+        main-font-family: var(--second-main-font-family);
         font-size: 4em;
     }
     .current-page::after {
