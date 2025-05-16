@@ -281,11 +281,13 @@ button {
 }
 .social-links__item {
     display: inline-block;
-    width: fit-content;
+  
+    align-items: center;
+    vertical-align: middle;
 }
 .social-links__item svg {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
     opacity: 0.32;
     transition: 380ms;
 }
@@ -293,6 +295,47 @@ button {
     opacity: 1;
     color: var(--third-color);
     transform: scale(1.2);
+}
+
+/* Photo switch buttons styles */
+.photo-switch__item {
+    border: none;
+    color: transparent;
+    background-color: transparent;
+}
+.photo-switch__item svg {
+    width: 100%;
+    height: 100%;
+    color: var(--main-color);
+    transition: 380ms;
+    cursor: pointer;
+}
+.photo-switch__item svg:hover {
+    transform: scale(1.3);
+    color: var(--third-color);
+    cursor: pointer;
+}
+.photo-switch__item svg:active {
+    color: var(--main-color);
+    transform: scale(1);
+}
+
+/* Social links styles */
+.event-links__wrap > a {
+    width: 44px;
+    height: 44px;
+}
+.event-links__wrap > a:first-child {
+    width: 52px;
+    height: 52px;
+}
+.people-links__wrap > a:first-child {
+    width: 28px;
+    height: 28px;
+}
+.people-links__wrap > a {
+    width: 24px;
+    height: 24px;
 }
 
 /* Media requires */
@@ -324,7 +367,7 @@ button {
     .mobile-lang-switch__button.current-language-mobile {
         opacity: 1;
     }
-    .lang-switch {
+    .desk-lang-switch {
         display: none;
     }
     .menu__mobile-lang-switch {

@@ -22,33 +22,27 @@ function keepOpenDropMenu(e) {
 
 document.addEventListener('click', keepOpenDropMenu);
 
-// Switch language
+// Switch language (Хрень, надо просто как-то обновлять состояние)
 function switchLanguage(e) {
-    let closestElem = e.target.closest('.language-btn:not(.language-btn.current-language)');
+    const closestElem = e.target.closest('.language-btn:not(.language-btn.current-language)');
 
     if (!closestElem || e.target.classList.contains('current-language')) return;
 
-    let target = e.target.value ? e.target : closestElem;
+    const targetElems = document.querySelectorAll('.language-btn:not(.language-btn.current-language)');
+    const prevLangElems = document.querySelectorAll('.language-btn.current-language');
 
-    const prevLanguage = target.parentElement.querySelector('.current-language');
+    const target = e.target.value ? e.target : closestElem;
     const buttonLanguage = document.querySelector('.dropdown__button');
 
-    const targetMode = target.parentElement.className.match(/desk|mobile/m)[0];
-    const anotherMode = targetMode === 'desk' ? 'mobile' : 'desk';
-    const anotherModePrevLang = document.querySelector(`.${anotherMode}-lang-switch__button[value='${prevLanguage.value}']`);
-    const anotherModeTargetLang = document.querySelector(`.${anotherMode}-lang-switch__button[value='${target.value}']`);
+    targetElems.forEach((item, i) => {
+        item.classList.toggle('current-language');
+        prevLangElems[i].classList.toggle('current-language');
 
-    prevLanguage.classList.toggle('current-language');
-    target.classList.toggle('current-language');
-    anotherModePrevLang.classList.toggle('current-language');
-    anotherModeTargetLang.classList.toggle('current-language');
+        item.classList.toggle(`current-language-${item.className.match(/desk|mobile/m)[0]}`);
+        prevLangElems[i].classList.toggle(`current-language-${prevLangElems[i].className.match(/desk|mobile/m)[0]}`);
+    });
 
-    prevLanguage.classList.toggle(`current-language-${targetMode}`);
-    target.classList.toggle(`current-language-${targetMode}`);
-    anotherModePrevLang.classList.toggle(`current-language-${anotherMode}`);
-    anotherModeTargetLang.classList.toggle(`current-language-${anotherMode}`);
-
-    if (targetMode === 'mobile') {
+    if (target.parentElement.className.match(/desk|mobile/m)[0] === 'mobile') {
         buttonLanguage.innerHTML = target.value + '<span class="desk-lang-switch-btn__arrow caret"></span>';
     }
     else {

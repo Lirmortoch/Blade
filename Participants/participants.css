@@ -31,6 +31,8 @@ html {
 .main__title {
     margin-bottom: 40px;
 }
+
+/* main carousel */
 .main__carousel {
     display: flex;
     flex-flow: row nowrap;
@@ -41,11 +43,6 @@ html {
 .carousel > button {
     height: 64px;
     width: 32px;
-    background-color: black;
-}
-.carousel button > svg {
-    width: 100%;
-    height: 100%;
 }
 .carousel__right-key {
     margin-left: 52px;
@@ -53,6 +50,7 @@ html {
 .carousel__left-key {
     margin-right: 52px;
 }
+
 .main__participants {
     display: flex;
     flex-flow: row nowrap;
@@ -67,6 +65,9 @@ html {
 .participants__item {
     margin-right: 48px;
 }
+.participants__item:nth-child(even) {
+    margin-top: 47px;
+}
 .participants__item:last-of-type {
     margin-right: 0px;
 }
@@ -80,7 +81,6 @@ html {
 .participant-carousel > button {
     height: 20px;
     width: 10px;
-    background-color: black;
 }
 .participant-carousel__left-key {
     
@@ -91,7 +91,7 @@ html {
     display: flex;
     flex-flow: row nowrap;
     overflow: hidden;
-    width: 450px;
+    width: 448px;
 }
 .participant-example__model {
     width: 448px;
@@ -108,14 +108,6 @@ html {
 .participant__country {
 }
 .participant__links {
-}
-.footer {
-}
-.footer__social-links {
-}
-.social-links {
-}
-.social-links__item {
 }
 
 @media screen and (max-width: 1299px) {
