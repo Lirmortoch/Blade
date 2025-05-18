@@ -55,7 +55,7 @@ html {
 .main__participants {
     display: flex;
     flex-flow: row nowrap;
-    width: 1350px;
+    width: 1440px;
     overflow: hidden;
    
 }
@@ -69,7 +69,7 @@ html {
 .participants__item:nth-child(even) {
     margin-top: 47px;
 }
-.participants__item:last-of-type {
+.participants__item:nth-child(3n) {
     margin-right: 0px;
 }
 .participant-item {
@@ -112,12 +112,27 @@ html {
 .participant__info {
     background-color: #f4f4f4;
 
-    /* box-shadow: 24px 24px 24px #0000003d;
+   
+    box-shadow: 0px 4px 24px -8px rgba(0,0,0,0.24);
 
     -webkit-backdrop-filter: blur(24px);
-    backdrop-filter: blur(24px); */
+    backdrop-filter: blur(24px);
 }
+.info__wrap {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    justify-content: space-between;
 
+    padding: 0px 16px 16px 106px;
+}
+.info__full-name-country {
+    padding: 16px 16px 0 24px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 16px;
+}
 .participant__photo {
     width: 64px;
     height: 64px;
@@ -133,17 +148,18 @@ html {
     font-family: var(--second-font-family);
     font-size: 24px;
     
-    letter-spacing: 3%;
+    letter-spacing: .03em;
+  
     line-height: 110.00000000000001%;
 }
 .participant__country {
-    margin-top: 12px;
     font-size: 14px;
     letter-spacing: 2px;
     opacity: 0.32;
     text-transform: uppercase;
 }
 .participant__links {
+    
 }
 
 @media screen and (max-width: 1299px) {

@@ -265,25 +265,19 @@ button {
 
 /* Footer and links styles */
 .footer {
- 
+
 }
 .footer__social-links {
     display: flex;
     align-items: center;
     gap: 24px;
-
-    width: fit-content;
-    margin: 7.188vw 0 2.5vw 0;
 }
 
 .social-links {
     
 }
 .social-links__item {
-    display: inline-block;
   
-    align-items: center;
-    vertical-align: middle;
 }
 .social-links__item svg {
     width: 100%;

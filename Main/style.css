@@ -176,6 +176,12 @@ html {
     margin-right: 20px;
 }
 
+/* Social links styles */
+.footer__social-links {
+    width: fit-content;
+    margin: 7.188vw 0 2.5vw 0;
+}
+
 @media screen and (max-width: 1900px) {
   .mtb__tag {
     margin-top: 5.833vw;
