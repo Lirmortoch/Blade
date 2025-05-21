@@ -65,6 +65,8 @@ html {
 
 .participants__item {
     margin-right: 48px;
+    display: grid;
+    
 }
 .participants__item:nth-child(even) {
     margin-top: 47px;
@@ -76,6 +78,10 @@ html {
     
 }
 .participant-item__carousel {
+    display: flex;
+    flex-flow: row nowrap;
+    overflow: hidden;
+    width: 448px;
 }
 .participant-item__style {
     opacity: 0.32;
@@ -97,10 +103,6 @@ html {
     
 }
 .participant-example {
-    display: flex;
-    flex-flow: row nowrap;
-    overflow: hidden;
-    width: 448px;
 }
 .participant-example__model {
     width: 448px;
