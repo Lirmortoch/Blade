@@ -65,8 +65,9 @@ html {
 
 .participants__item {
     margin-right: 48px;
+
     display: grid;
-    
+    grid-template-columns: 83px 1fr;
 }
 .participants__item:nth-child(even) {
     margin-top: 47px;
@@ -74,6 +75,7 @@ html {
 .participants__item:nth-child(3n) {
     margin-right: 0px;
 }
+
 .participant-item {
     
 }
@@ -90,6 +92,11 @@ html {
     text-align: right;
     text-transform: uppercase;
     font-weight: 700;
+
+    transform: rotate(-90deg);
+
+    width: max-content;
+    height: min-content;
 }
 .participant-carousel > button {
     height: 20px;
@@ -107,7 +114,7 @@ html {
 .participant-example__model {
     width: 448px;
     height: 580px;
-    border: 2px solid rgba(48, 48, 48, 1)
+    border: 2px solid rgba(48, 48, 48, 1);
 }
 .participant-carousel__right-key {
 }
@@ -119,6 +126,11 @@ html {
 
     -webkit-backdrop-filter: blur(24px);
     backdrop-filter: blur(24px);
+
+    width: 100%;
+}
+.participant-carousel__buttons {
+   
 }
 .info__wrap {
     display: flex;
