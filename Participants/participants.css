@@ -55,7 +55,7 @@ html {
 .main__participants {
     display: flex;
     flex-flow: row nowrap;
-    width: 1440px;
+    width: 79.531%;
     overflow: hidden;
    
 }
@@ -191,6 +191,9 @@ html {
 .participant__links {
     
 }
+.carousel__pagnitation {
+    display: none;
+}
 
 @media screen and (max-width: 1299px) {
     .menu__toggler-wrap::after, .menu__toggler-wrap::before, .menu__toggler-wrap span {
@@ -219,5 +222,27 @@ html {
 @media screen and (max-width: 799px) {
     .mtb__tag {
         display: none;
+    }
+    .carousel__pagnitation {
+        display: block;
+        margin-top: 24px;
+    }
+    .carousel-pagnitation__block {
+        display: inline-block;
+
+        width: 8px;
+        height: 8px;
+
+        border-radius: 50%;
+        opacity: 0.24;
+        background-color: var(--main-color);
+        
+        margin-right: 8px;
+    }
+    .carousel-pagnitation__block:last-of-type {
+        margin-right: 0px;
+    }
+    .carousel-pagnitation__block.active-item {
+        background: linear-gradient(121.1deg, rgba(101, 78, 163, 0.87) 35.26%, rgba(95, 75, 139, 0.87) 88.11%);
     }
 }
