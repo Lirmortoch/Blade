@@ -67,7 +67,7 @@ html {
     margin-right: 48px;
 
     display: grid;
-    grid-template-columns: min-content 1fr max-content;
+    grid-template-columns: 29px 1fr max-content;
     grid-template-rows: min-content min-content min-content;
 
     transition: 380ms;
@@ -92,6 +92,10 @@ html {
     
     grid-column: 2 / 4;
 }
+.participant-item__style-wrap {
+    position: relative;
+    height: 100%;
+}
 .participant-item__style {
     opacity: 0.32;
     font-size: 14px;
@@ -100,14 +104,15 @@ html {
     text-transform: uppercase;
     font-weight: 700;
 
-    transform: rotate(-90deg);
-    transform-origin: bottom center;
-    
-    border: 3px solid red;
+    white-space: nowrap;
 
-    /* padding-bottom: 56px;
-    margin-top: 32px; */
+    position: absolute;
+    top: 13%;
+    left: 0;
     
+    transform-origin: top center;
+    transform: translateX(-50%) rotate(-90deg);
+
     width: max-content;
     height: min-content;
 }
