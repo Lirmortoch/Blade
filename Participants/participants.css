@@ -56,7 +56,7 @@ html {
 .main__participants {
     display: flex;
     flex-flow: row nowrap;
-    width: 1527px; /* 79.531vw */
+    width: 79.531vw; /* 1527px */
     overflow: hidden;
 }
 .participants {
@@ -107,7 +107,6 @@ html {
     white-space: nowrap;
 
     position: absolute;
-    top: 13%;
     left: 0;
     
     transform-origin: top center;
