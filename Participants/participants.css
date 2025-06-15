@@ -22,13 +22,13 @@ html {
 /* wrap styles */
 .wrap {
     display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: repeat(2, -webkit-min-content);
-    grid-template-rows: repeat(2, min-content);
+    grid-template-columns: min-content 90%;
+    grid-template-rows: repeat(1, -webkit-min-content);
+    grid-template-rows: repeat(1, min-content);
 }
 
 .main {
-    width: 100%;
+    
 }
 .main__title {
     margin-bottom: 40px;
@@ -56,7 +56,7 @@ html {
 .main__participants {
     display: flex;
     flex-flow: row nowrap;
-    width: 79.531vw; /* 1527px */
+    width: 100%; /* 1527px */
     overflow: hidden;
 }
 .participants {
@@ -80,9 +80,6 @@ html {
     
 }
 .participant-item__carousel {
-    display: flex;
-    flex-flow: row nowrap;
-
     overflow: hidden;
 
     width: 448px;
@@ -91,6 +88,9 @@ html {
     border: 2px solid rgba(48, 48, 48, 1);
     
     grid-column: 2 / 4;
+
+    display: flex;
+    flex-flow: row nowrap;
 }
 .participant-item__style-wrap {
     position: relative;
@@ -133,6 +133,8 @@ html {
     height: 100%;
     
     transition: 380ms;
+
+    flex: 1 0 auto;
 }
 .participant-carousel__right-key {
 }
@@ -222,6 +224,9 @@ html {
     .mtb__tag {
         margin-top: calc(2.2vw - 1.0%);
     }
+}
+@media screen and (max-width: 1366px) {
+    
 }
 @media screen and (max-width: 999px) {
     .mtb__tag {
