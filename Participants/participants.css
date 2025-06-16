@@ -25,10 +25,13 @@ html {
     grid-template-columns: min-content 90%;
     grid-template-rows: repeat(1, -webkit-min-content);
     grid-template-rows: repeat(1, min-content);
+
+    width: 100%;
+    margin: 0 auto 0 0;
 }
 
 .main {
-    
+
 }
 .main__title {
     margin-bottom: 40px;
@@ -36,36 +39,43 @@ html {
 
 /* main carousel */
 .main__carousel {
+    gap: 52px;
+
+    width: 100%;
+}
+
+/* Carousel styles */
+.carousel {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-
-    width: 100%;
+}
+.carousel__wrap {
+    display: flex;
+    flex-flow: row nowrap;
+    overflow: hidden;
 }
 .carousel > button {
     height: 64px;
     width: 32px;
 }
-.carousel__right-key {
-    margin-left: 52px;
+.carousel > button > svg {
+    opacity: 0.16;
 }
-.carousel__left-key {
-    margin-right: 52px;
+.carousel > button > svg:hover {
+    opacity: 1;
 }
 
 .main__participants {
-    display: flex;
-    flex-flow: row nowrap;
-    width: 100%; /* 1527px */
-    overflow: hidden;
+    width: 90.2%;
+
+    gap: 48px;
 }
 .participants {
     
 }
 
 .participants__item {
-    margin-right: 48px;
-
     display: grid;
     grid-template-columns: 29px 1fr max-content;
     grid-template-rows: min-content min-content min-content;
@@ -80,17 +90,12 @@ html {
     
 }
 .participant-item__carousel {
-    overflow: hidden;
-
     width: 448px;
     height: 580px;
 
     border: 2px solid rgba(48, 48, 48, 1);
     
     grid-column: 2 / 4;
-
-    display: flex;
-    flex-flow: row nowrap;
 }
 .participant-item__style-wrap {
     position: relative;
@@ -115,13 +120,9 @@ html {
     width: max-content;
     height: min-content;
 }
-.participant-carousel > button {
-    height: 20px;
-    width: 10px;
-}
 
 .participant-carousel__left-key {
-    padding-right: 16px;
+    margin-right: 16px;
 }
 .participant__example {
     
@@ -157,7 +158,16 @@ html {
 .participant-carousel__buttons {
     margin: 16px 2px 0px 14px;
     grid-column: 3 / 4;
-    
+}
+.participant-carousel__buttons > button {
+    height: 20px;
+    width: 10px;
+}
+.participant-carousel__buttons > button > svg {
+    opacity: 0.16;
+}
+.participant-carousel__buttons > button > svg:hover {
+    opacity: 1;
 }
 .info__wrap {
     display: flex;
@@ -206,6 +216,26 @@ html {
     display: none;
 }
 
+@media screen and (max-width: 1366px) {
+  
+  .participants__item:nth-child(even) {
+    margin-top: 0px;
+  }
+  .main__carousel {
+    position: relative;
+  }
+  /* button.carousel__right-key {
+    width: 80px;
+    height: 100%;
+
+    position: absolute;
+    right: 0;
+
+    background-color: black;
+
+    margin: 0;
+  } */
+}
 @media screen and (max-width: 1299px) {
     .menu__toggler-wrap::after, .menu__toggler-wrap::before, .menu__toggler-wrap span {
         background-color: #654EA3;
@@ -224,9 +254,26 @@ html {
     .mtb__tag {
         margin-top: calc(2.2vw - 1.0%);
     }
-}
-@media screen and (max-width: 1366px) {
-    
+
+    .wrap {
+        grid-template-columns: 90%;
+        grid-template-rows: min-content 100%;
+    }
+    .main {
+        grid-row: 1 / 2;
+    }
+    .left-side-decor {
+        grid-row: 2 / 3;
+        align-self: self-start;
+    }
+    .left-side-decor__data {
+        top: 0;
+        padding-bottom: 24px;
+        margin-bottom: 0;
+    }
+    .data__hor-line {
+        background-color: var(--main-color);
+    }
 }
 @media screen and (max-width: 999px) {
     .mtb__tag {
@@ -258,5 +305,11 @@ html {
     }
     .carousel-pagnitation__block.active-item {
         background: linear-gradient(121.1deg, rgba(101, 78, 163, 0.87) 35.26%, rgba(95, 75, 139, 0.87) 88.11%);
+    }
+}
+
+@media screen and (max-height: 1000px) and (max-width: 799px) {
+    .left-side-decor {
+        display: none;
     }
 }
