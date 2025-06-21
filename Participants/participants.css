@@ -82,7 +82,7 @@ body {
 .participants__item {
     display: grid;
     grid-template-columns: 29px 1fr max-content;
-    grid-template-rows: repeat(3, min-content);
+    grid-template-rows: repeat(4, min-content);
 
     transition: 380ms;
     height: 668px;
@@ -307,22 +307,45 @@ body {
 @media screen and (max-width: 530px) {
     .main__participants {
         width: 100%;
+        height: fit-content;
+
         gap: 100%;
     }
     .participants__item {
         width: 100%;
+        height: 442.34px;
+
         flex: 1 0 auto;
+
+        grid-template-columns: min-content 1fr max-content;
     }
     .participant-item__carousel {
-        width: 77.5vw;
+        width: 100%;
         height: 47.059vh;
     }
     .participant__info {
-        width: 300px;
+        width: 93.75%;
         height: 120px;
+
+        grid-row: 3 /4;
+    }
+    .participant-item__style-wrap {
+        grid-row: 1/2;
+        grid-column: 1/2;
+        margin-left: 43px;
     }
     .participant-carousel__buttons {
-        
+        grid-row: 2/3;
+        grid-column: 1/2;
+
+        width: max-content;
+        height: fit-content;
+
+        position: relative;
+        top: -55px;
+    }
+    .participant-carousel__buttons {
+        margin: 0 12px 0 24px;
     }
     .participant__full-name {
         font-size: 21px;
@@ -333,8 +356,48 @@ body {
     .wrap {
         padding: 0;
     }
+    .carousel {
+        flex-flow: column nowrap;
+        gap: 24px;
+    }
     .main__title {
-        margin-left: 16px;
+        margin: 0 0 32px 16px;
+        font-size: 32px;
+    }
+    .carousel__pagnitation {
+        display: block;
+
+        font-size: 0px;
+        letter-spacing: 0px;
+        word-spacing: 0px;
+    }
+    .carousel-pagnitation__item {
+        display: inline-block;
+
+        width: 8px;
+        height: 8px;
+
+        background-color: var(--main-color);
+
+        margin-right: 8px;
+
+        border-radius: 50%;
+
+        opacity: 0.32;
+    }
+    .carousel-pagnitation__item:last-child {
+        margin-right: 0;
+    }
+    .carousel-pagnitation__item.active {
+        background: linear-gradient(121.1deg, rgba(101, 78, 163, 0.87) 35.26%, rgba(95, 75, 139, 0.87) 88.11%);
+        opacity: 1;
+    }
+}
+@media screen and (max-device-width: 414px) and (max-device-height: 736px)
+  and (orientation: portrait)
+  and (aspect-ratio: 375/667) {
+   .participant-item__carousel {
+        height: 50vh;
     }
 }
 @media screen and (max-height: 1000px) and (max-width: 799px) {
