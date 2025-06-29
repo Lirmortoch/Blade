@@ -8,8 +8,7 @@ html {
     --main-background: #ffffff;
 }
 body {
-    display: flex;
-    flex-flow: column nowrap;
+   
 }
 /* Header and navigation styles */
 .header__menu, .menu__toggler {
@@ -48,49 +47,9 @@ body {
     width: 100%;
 }
 
-/* Carousel styles */
-.carousel {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-}
-.carousel__wrap {
-    display: flex;
-    flex-flow: row nowrap;
-
-    overflow-y: hidden;
-    
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-}
-.big-carousel__wrap {
-    overflow-x: auto;
-}
-.small-carousel__wrap {
-    overflow-x: hidden;
-}
-.carousel__wrap::-webkit-scrollbar {
-    display: none;
-}
-.carousel > button {
-    height: 64px;
-    width: 32px;
-}
-.carousel > button > svg {
-    opacity: 0.16;
-}
-.carousel > button > svg:hover {
-    opacity: 1;
-}
-.carousel__pagnitation {
-    display: none;
-}
-
 /* Participants Styles */
 .main__participants {
     width: 89.4%;
-
-    gap: 48px;
 }
 .participants {
     
@@ -99,7 +58,7 @@ body {
 .participants__item {
     display: grid;
     grid-template-columns: 29px 1fr max-content;
-    grid-template-rows: repeat(2, min-content) 96px;
+    grid-template-rows: repeat(2, min-content);
 
     transition: 380ms;
     height: fit-content;
@@ -236,6 +195,7 @@ body {
     
 }
 
+/* Media requires */
 @media screen and (min-width: 2560px) {
     .main__participants {
         width: 2055px;
@@ -275,46 +235,6 @@ body {
         padding: 0;
     }
 
-    .carousel__right-key, .carousel__left-key {
-        svg {
-            display: none;
-        }
-        
-        transition: 380ms;
-    }
-    .hidden-carousel-btn {
-        opacity: 0;
-        pointer-events: none;
-        cursor: none;
-    }
-    .main__participants {
-        width: 100%;
-    }
-    .main__title {
-        margin-left: 48px;
-    }
-    .participants__item:first-child {
-        margin-left: 48px;
-    }
-    .participants__item:last-child {
-        margin-right: 48px;
-    }
-    button.carousel__right-key, button.carousel__left-key {
-        width: 80px;
-        
-        height: 100%;
-
-        position: absolute;
-
-        background: linear-gradient(270deg, rgba(255, 255, 255, 0.49) 0%, rgba(255, 255, 255, 0) 100%);
-    }
-    button.carousel__right-key {
-        right: 0;
-    }
-    button.carousel__left-key {
-        left: 0;
-    }
-
     .main {
         grid-row: 1 / 2;
     }
@@ -331,16 +251,6 @@ body {
     .data__hor-line {
         background-color: var(--main-color);
     }
-
-    .carousel {
-    
-    }
-    .carousel__wrap {
-        scroll-snap-type: x mandatory;
-    }
-    .carousel-item {
-        scroll-snap-align: center;
-    }
 }
 @media screen and (max-width: 999px) {
     .mtb__tag {
@@ -352,7 +262,7 @@ body {
         display: none;
     }
 }
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 599px) {
     .main__participants {
         width: 100%;
         height: fit-content;
@@ -398,47 +308,14 @@ body {
     .participant__full-name {
         font-size: 21px;
     }
-    .carousel__right-key {
-        display: none;
-    }
+
     .wrap {
         padding: 0;
     }
-    .carousel {
-        flex-flow: column nowrap;
-        gap: 24px;
-    }
+
     .main__title {
         margin: 0 0 32px 16px;
         font-size: 32px;
-    }
-    .carousel__pagnitation {
-        display: block;
-
-        font-size: 0px;
-        letter-spacing: 0px;
-        word-spacing: 0px;
-    }
-    .carousel-pagnitation__item {
-        display: inline-block;
-
-        width: 8px;
-        height: 8px;
-
-        background-color: var(--main-color);
-
-        margin-right: 8px;
-
-        border-radius: 50%;
-
-        opacity: 0.32;
-    }
-    .carousel-pagnitation__item:last-child {
-        margin-right: 0;
-    }
-    .carousel-pagnitation__item.active {
-        background: linear-gradient(121.1deg, rgba(101, 78, 163, 0.87) 35.26%, rgba(95, 75, 139, 0.87) 88.11%);
-        opacity: 1;
     }
 }
 @media screen and (max-device-width: 414px) and (max-device-height: 736px)
