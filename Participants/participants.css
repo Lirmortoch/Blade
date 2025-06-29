@@ -25,7 +25,7 @@ body {
 /* wrap styles */
 .wrap {
     display: grid;
-    grid-template-columns: min-content 90%;
+    grid-template-columns: min-content 91%;
     grid-template-rows: 100%;
 
     width: 100%;
@@ -82,9 +82,13 @@ body {
 .carousel > button > svg:hover {
     opacity: 1;
 }
+.carousel__pagnitation {
+    display: none;
+}
 
+/* Participants Styles */
 .main__participants {
-    width: 90.2%;
+    width: 89.4%;
 
     gap: 48px;
 }
@@ -95,7 +99,7 @@ body {
 .participants__item {
     display: grid;
     grid-template-columns: 29px 1fr max-content;
-    grid-template-rows: repeat(4, min-content);
+    grid-template-rows: repeat(2, min-content) 96px;
 
     transition: 380ms;
     height: fit-content;
@@ -231,10 +235,12 @@ body {
 .participant__links {
     
 }
-.carousel__pagnitation {
-    display: none;
-}
 
+@media screen and (min-width: 2560px) {
+    .main__participants {
+        width: 2055px;
+    }
+}
 @media screen and (max-width: 1366px) {
   
   .participants__item:nth-child(even) {
@@ -269,13 +275,17 @@ body {
         padding: 0;
     }
 
-    .carousel__left-key {
-        display: none;
-    }
     .carousel__right-key, .carousel__left-key {
         svg {
             display: none;
         }
+        
+        transition: 380ms;
+    }
+    .hidden-carousel-btn {
+        opacity: 0;
+        pointer-events: none;
+        cursor: none;
     }
     .main__participants {
         width: 100%;
@@ -283,8 +293,11 @@ body {
     .main__title {
         margin-left: 48px;
     }
-    .participants__item:nth-child(1) {
+    .participants__item:first-child {
         margin-left: 48px;
+    }
+    .participants__item:last-child {
+        margin-right: 48px;
     }
     button.carousel__right-key, button.carousel__left-key {
         width: 80px;
@@ -320,11 +333,10 @@ body {
     }
 
     .carousel {
-        scroll-snap-type: x mandatory;
-        scroll-padding: 50%;
+    
     }
     .carousel__wrap {
-
+        scroll-snap-type: x mandatory;
     }
     .carousel-item {
         scroll-snap-align: center;
@@ -347,7 +359,7 @@ body {
     }
     .participants__item {
         width: 100%;
-        height: 442.34px;
+        height: min-content;
 
         flex: 1 0 auto;
 
@@ -362,7 +374,6 @@ body {
     }
     .participant__info {
         width: 93.75%;
-        height: 120px;
 
         grid-row: 3 /4;
     }
