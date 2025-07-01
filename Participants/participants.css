@@ -49,7 +49,7 @@ body {
 
 /* Participants Styles */
 .main__participants {
-    width: 89.4%;
+    
 }
 .participants {
     
@@ -196,18 +196,9 @@ body {
 }
 
 /* Media requires */
-@media screen and (min-width: 2560px) {
-    .main__participants {
-        width: 2055px;
-    }
-}
 @media screen and (max-width: 1366px) {
-  
   .participants__item:nth-child(even) {
     margin-top: 0px;
-  }
-  .main__carousel {
-    position: relative;
   }
 }
 @media screen and (max-width: 1299px) {
@@ -238,6 +229,9 @@ body {
     .main {
         grid-row: 1 / 2;
     }
+    .main__title {
+        margin-left: 48px;
+    }
     .left-side-decor {
         grid-row: 2 / 3;
         align-self: self-start;
@@ -263,12 +257,7 @@ body {
     }
 }
 @media screen and (max-width: 599px) {
-    .main__participants {
-        width: 100%;
-        height: fit-content;
-    }
     .participants__item {
-        width: 100%;
         height: min-content;
 
         flex: 1 0 auto;

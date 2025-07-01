@@ -268,13 +268,11 @@ button {
 
 }
 .footer__social-links {
-    display: flex;
-    align-items: center;
-    gap: 24px;
 }
 
 .social-links {
-    
+    display: flex;
+    align-items: center;
 }
 .social-links__item {
   
@@ -315,6 +313,9 @@ button {
 }
 
 /* Social links styles */
+.event-links__wrap {
+    gap: 24px;
+}
 .event-links__wrap > a {
     width: 44px;
     height: 44px;
@@ -323,9 +324,11 @@ button {
     width: 52px;
     height: 52px;
 }
+.people-links__wrap {
+    gap: 12px;
+}
 .people-links__wrap > a:first-child {
-    width: 28px;
-    height: 28px;
+   
 }
 .people-links__wrap > a {
     width: 24px;
@@ -350,6 +353,7 @@ button {
     gap: 48px;
 }
 .big-carousel__wrap {
+    width: 100%;
     overflow-x: auto;
 }
 .small-carousel__wrap {
@@ -373,6 +377,11 @@ button {
 }
 
 /* Media requires */
+@media screen and (min-width: 2560px) {
+    .big-carousel__wrap {
+        width: 2055px;
+    }
+}
 @media screen and (min-width: 1299px) {
     .footer-mobile, .nav__mobile-separator, .mobile-bfw, .menu__mobile-back {
         display: none;
@@ -424,7 +433,7 @@ button {
     }
 
     /* Mobile menu */
-    .header__menu .footer, .nav__mobile-separator {
+    .header__menu .footer-mobile, .nav__mobile-separator {
         display: block;
     }
     .header__menu {
@@ -532,7 +541,7 @@ button {
         main-font-family: var(--second-main-font-family);
         font-size: 4em;
     }
-    .current-page::after {
+    .current-page::after, .footer:not(.footer-mobile) {
         display: none;
     }
 
@@ -592,16 +601,10 @@ button {
         pointer-events: none;
         cursor: none;
     }
-    .main__participants {
-        width: 100%;
-    }
-    .main__title {
+    .carousel-item:first-child {
         margin-left: 48px;
     }
-    .participants__item:first-child {
-        margin-left: 48px;
-    }
-    .participants__item:last-child {
+    .carousel-item:last-child {
         margin-right: 48px;
     }
     button.carousel__right-key, button.carousel__left-key {
@@ -639,6 +642,12 @@ button {
 @media screen and (max-width: 599px) {
     .header {
         margin: 0 16px;
+    }
+    .big-carousel__wrap {
+        height: fit-content;
+    }
+    .carousel-item {
+        width: 100%;
     }
 }
 @media screen and (max-width: 530px) {

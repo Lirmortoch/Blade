@@ -101,10 +101,7 @@ function mainSliderNextSlide(e) {
 
     let scrollValue;
 
-    if (window.innerWidth >= 1920) {
-        scrollValue = carouselWrap.getBoundingClientRect().width + (48 * 2);
-    }
-    if (window.innerWidth >= 1300 && window.innerWidth < 1920) {
+    if (window.innerWidth >= 1300) {
         scrollValue = carouselWrap.getBoundingClientRect().width + 48;
     }
     if (window.innerWidth > 999 && window.innerWidth < 1300) {
@@ -132,10 +129,7 @@ function mainSliderPrevSlide(e) {
 
     let scrollValue;
 
-    if (window.innerWidth >= 1920) {
-        scrollValue = carouselWrap.getBoundingClientRect().width + (48 * 2);
-    }
-    if (window.innerWidth >= 1300 && window.innerWidth < 1920) {
+    if (window.innerWidth >= 1300) {
         scrollValue = carouselWrap.getBoundingClientRect().width + 48;
     }
     if (window.innerWidth > 999 && window.innerWidth < 1300) {
