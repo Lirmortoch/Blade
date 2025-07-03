@@ -157,7 +157,7 @@ function swipeSliderToRight() {
     document.querySelector(`.carousel-pagnitation__item:nth-child(${itemCount})`).classList.add('active');
 }
 function swipeSliderToLeft() {
-    if (itemCount > 0) itemCount--;
+    if (itemCount > 1) itemCount--;
 
     document.querySelector('.carousel-pagnitation__item.active').classList.remove('active');
     document.querySelector(`.carousel-pagnitation__item:nth-child(${itemCount})`).classList.add('active');

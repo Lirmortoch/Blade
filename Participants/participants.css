@@ -8,7 +8,8 @@ html {
     --main-background: #ffffff;
 }
 body {
-   
+    display: flex; 
+    flex-flow: column nowrap;
 }
 /* Header and navigation styles */
 .header__menu, .menu__toggler {
@@ -61,7 +62,7 @@ body {
     grid-template-rows: repeat(2, min-content);
 
     transition: 380ms;
-    height: fit-content;
+    height: 668px;
 }
 .participants__item:nth-child(even) {
     margin-top: 47px;
@@ -120,13 +121,11 @@ body {
 }
 .participant-carousel__right-key {
 }
+
 .participant__info {
     background-color: #f4f4f4;
    
     box-shadow: 0px 4px 24px -8px rgba(0,0,0,0.24);
-
-    -webkit-backdrop-filter: blur(24px);
-    backdrop-filter: blur(24px);
 
     width: 420px;
     height: 120px;
@@ -234,11 +233,10 @@ body {
     }
     .left-side-decor {
         grid-row: 2 / 3;
-        align-self: self-start;
+        align-self: start;
     }
     .left-side-decor__data {
         top: 0;
-        padding-bottom: 24px;
         margin-bottom: 0;
     }
     
@@ -263,9 +261,7 @@ body {
         flex: 1 0 auto;
 
         grid-template-columns: min-content 1fr max-content;
-    }
-    .participants__item:nth-child(1) {
-        margin-left: 0;
+        grid-template-rows: min-content min-content 96px;
     }
     .participant-item__carousel {
         width: 100%;
@@ -299,6 +295,7 @@ body {
     }
 
     .wrap {
+        grid-template-rows: min-content;
         padding: 0;
     }
 

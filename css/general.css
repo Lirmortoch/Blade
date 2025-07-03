@@ -28,13 +28,14 @@ button {
     color: var(--main-color);
 }
 .title {
-    main-font-family: var(--second-main-font-family);
+    font-family: var(--second-font-family);
     font-size: 4em;
 }
 .uppercase {
     text-transform: uppercase;
 }
 .bold {
+    font-weight: 700;
 }
 
 /* Header and navigation styles */
@@ -251,6 +252,7 @@ button {
 .data__value {
     font-size: 18px;
     margin: 0 23px 0 0;
+    opacity: 0.87;
 }
 .data__hor-line {
     display: none;
@@ -562,10 +564,8 @@ button {
         align-items: center;
         gap: 16px;
 
-        opacity: 0.5;
-
         position: absolute;
-        right: -75px;
+        right: -117px;
 
         margin: 24px 0;
     }
@@ -648,6 +648,12 @@ button {
     }
     .carousel-item {
         width: 100%;
+    }
+    .carousel-item:first-child {
+        margin-left: 0;
+    }
+    .carousel-item:last-child {
+        margin-right: 0;
     }
 }
 @media screen and (max-width: 530px) {
