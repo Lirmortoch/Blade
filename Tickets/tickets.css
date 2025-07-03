@@ -1,0 +1,67 @@
+@import url('../css/general.css');
+@import url('../css/common-styles-white-pages.css');
+
+
+.main__title {
+    margin-bottom: 80px;
+}
+
+.main__buy-tickets {
+    display: grid;
+
+    grid-template-areas: 
+        'description price'
+        'payment-methods price'
+        'questions price'
+        'tel price'
+    ;
+
+    grid-template-columns: min-content 1fr;
+    column-gap: 110px;
+}
+.buy-tickets > p {
+    letter-spacing: 0px;
+
+    line-height: 150%;
+}
+.buy-tickets-text {
+    width: 480px;
+
+    color: var(--main-color);
+
+    opacity: 0.87;
+}
+.buy-tickets__description {
+    grid-area: description;
+}
+.buy-tickets__payment-methods {
+    margin-top: 32px;
+
+    grid-area: payment-methods;
+
+    display: flex;
+    gap: 48px;
+}
+.buy-tickets__questions {
+    margin-top: 48px;
+
+    grid-area: questions;
+}
+.buy-tickets__question-phone {
+    margin-top: 16px;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    background: linear-gradient(121.1deg, rgba(101, 78, 163, 0.87) 35.26%, rgba(95, 75, 139, 0.87) 88.11%);
+    background-clip: text;
+    color: transparent;
+
+    grid-area: tel;
+}
+
+.buy-tickets__price {
+    grid-area: price;
+
+    
+}
