@@ -1,5 +1,4 @@
 @import url('../css/general.css');
-@import url('../css/common-styles-white-pages.css');
 
 html {
     --main-color: #303030;
@@ -9,7 +8,7 @@ html {
     --main-background: #ffffff;
 }
 body {
-    display: flex; 
+    display: flex;
     flex-flow: column nowrap;
 }
 /* Header and navigation styles */
@@ -49,9 +48,49 @@ body {
     width: 100%;
 }
 
+/* Carousel styles */
+.carousel {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.carousel__wrap {
+    display: flex;
+    flex-flow: row nowrap;
+
+    overflow-y: hidden;
+    
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+.big-carousel__wrap {
+    overflow-x: auto;
+}
+.small-carousel__wrap {
+    overflow-x: hidden;
+}
+.carousel__wrap::-webkit-scrollbar {
+    display: none;
+}
+.carousel > button {
+    height: 64px;
+    width: 32px;
+}
+.carousel > button > svg {
+    opacity: 0.16;
+}
+.carousel > button > svg:hover {
+    opacity: 1;
+}
+.carousel__pagnitation {
+    display: none;
+}
+
 /* Participants Styles */
 .main__participants {
-    
+    width: 89.4%;
+
+    gap: 48px;
 }
 .participants {
     
@@ -60,10 +99,10 @@ body {
 .participants__item {
     display: grid;
     grid-template-columns: 29px 1fr max-content;
-    grid-template-rows: repeat(2, min-content);
+    grid-template-rows: repeat(2, min-content) 96px;
 
     transition: 380ms;
-    height: 668px;
+    height: fit-content;
 }
 .participants__item:nth-child(even) {
     margin-top: 47px;
@@ -122,11 +161,13 @@ body {
 }
 .participant-carousel__right-key {
 }
-
 .participant__info {
     background-color: #f4f4f4;
    
     box-shadow: 0px 4px 24px -8px rgba(0,0,0,0.24);
+
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
 
     width: 420px;
     height: 120px;
@@ -195,20 +236,137 @@ body {
     
 }
 
-/* Media requires */
+@media screen and (min-width: 2560px) {
+    .main__participants {
+        width: 2055px;
+    }
+}
 @media screen and (max-width: 1366px) {
+  
   .participants__item:nth-child(even) {
     margin-top: 0px;
   }
+  .main__carousel {
+    position: relative;
+  }
 }
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 1299px) {
+    .menu__toggler-wrap::after, .menu__toggler-wrap::before, .menu__toggler-wrap span {
+        background-color: #654EA3;
+    }
+    body.mobile-lock {
+        .menu__toggler-wrap::after, .menu__toggler-wrap::before, .menu__toggler-wrap span, .header__logo {
+            background-color: #ffffff;
+        }
+        .menu__toggler {
+            margin-left: 0;
+        }
+    }
+    .header a,  .mobile-lang-switch > * {
+        color: var(--second-color);
+    }
+    .mtb__tag {
+        margin-top: calc(2.2vw - 1.0%);
+    }
+
+    .wrap {
+        grid-template-rows: min-content 100%;
+        grid-template-columns: 100%;
+        padding: 0;
+    }
+
+    .carousel__right-key, .carousel__left-key {
+        svg {
+            display: none;
+        }
+        
+        transition: 380ms;
+    }
+    .hidden-carousel-btn {
+        opacity: 0;
+        pointer-events: none;
+        cursor: none;
+    }
+    .main__participants {
+        width: 100%;
+    }
+    .main__title {
+        margin-left: 48px;
+    }
+    .participants__item:first-child {
+        margin-left: 48px;
+    }
+    .participants__item:last-child {
+        margin-right: 48px;
+    }
+    button.carousel__right-key, button.carousel__left-key {
+        width: 80px;
+        
+        height: 100%;
+
+        position: absolute;
+
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0.49) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+    button.carousel__right-key {
+        right: 0;
+    }
+    button.carousel__left-key {
+        left: 0;
+    }
+
+    .main {
+        grid-row: 1 / 2;
+    }
+    .left-side-decor {
+        grid-row: 2 / 3;
+        align-self: self-start;
+    }
+    .left-side-decor__data {
+        top: 0;
+        padding-bottom: 24px;
+        margin-bottom: 0;
+    }
+    
+    .data__hor-line {
+        background-color: var(--main-color);
+    }
+
+    .carousel {
+    
+    }
+    .carousel__wrap {
+        scroll-snap-type: x mandatory;
+    }
+    .carousel-item {
+        scroll-snap-align: center;
+    }
+}
+@media screen and (max-width: 999px) {
+    .mtb__tag {
+        margin-top: calc(2.2vw - 1.3%);
+    }
+}
+@media screen and (max-width: 799px) {
+    .mtb__tag {
+        display: none;
+    }
+}
+@media screen and (max-width: 530px) {
+    .main__participants {
+        width: 100%;
+        height: fit-content;
+    }
     .participants__item {
+        width: 100%;
         height: min-content;
 
         flex: 1 0 auto;
 
         grid-template-columns: min-content 1fr max-content;
-        grid-template-rows: min-content min-content 96px;
+    }
+    .participants__item:nth-child(1) {
+        margin-left: 0;
     }
     .participant-item__carousel {
         width: 100%;
@@ -240,11 +398,58 @@ body {
     .participant__full-name {
         font-size: 21px;
     }
+    .carousel__right-key {
+        display: none;
+    }
+    .wrap {
+        padding: 0;
+    }
+    .carousel {
+        flex-flow: column nowrap;
+        gap: 24px;
+    }
+    .main__title {
+        margin: 0 0 32px 16px;
+        font-size: 32px;
+    }
+    .carousel__pagnitation {
+        display: block;
+
+        font-size: 0px;
+        letter-spacing: 0px;
+        word-spacing: 0px;
+    }
+    .carousel-pagnitation__item {
+        display: inline-block;
+
+        width: 8px;
+        height: 8px;
+
+        background-color: var(--main-color);
+
+        margin-right: 8px;
+
+        border-radius: 50%;
+
+        opacity: 0.32;
+    }
+    .carousel-pagnitation__item:last-child {
+        margin-right: 0;
+    }
+    .carousel-pagnitation__item.active {
+        background: linear-gradient(121.1deg, rgba(101, 78, 163, 0.87) 35.26%, rgba(95, 75, 139, 0.87) 88.11%);
+        opacity: 1;
+    }
 }
 @media screen and (max-device-width: 414px) and (max-device-height: 736px)
   and (orientation: portrait)
   and (aspect-ratio: 375/667) {
    .participant-item__carousel {
         height: 50vh;
+    }
+}
+@media screen and (max-height: 1000px) and (max-width: 799px) {
+    .left-side-decor {
+        display: none;
     }
 }

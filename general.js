@@ -76,6 +76,10 @@ function toggleMobileMenu(e) {
 document.addEventListener('click', toggleMobileMenu);
 
 // Carousel
+class Carousel {
+    
+}
+
 const carouselItemCount = document.querySelectorAll('.carousel-item').length;
 
 function createPagnitation() {
