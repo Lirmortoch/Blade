@@ -13,41 +13,38 @@
 
 /* Tickets BLock Styles */
 .main__buy-tickets {
-    display: grid;
+    display: flex;
+    gap: max(40px, min(110px, 3.729vw));
 
-    grid-template-areas: 
-        'description price'
-        'payments price'
-        'question price'
-        'tel price'
-    ;
+    padding-bottom: 10vh;
 
-    grid-template-columns: min-content min-content;
-    column-gap: 110px;
-    grid-template-rows: repeat(4, min-content);
-
-    padding-bottom: 313px;
-}
-.buy-tickets > p {
-    letter-spacing: 0;
-    line-height: 150%;
+    width: 95%;
 }
 .buy-tickets__description {
     grid-area: description;
+    margin-bottom: 32px;
 }
 .buy-tickets-text {
     width: 480px;
     font-size: 18px;
+
+    letter-spacing: 0;
+    line-height: 150%;
 }
 .buy-tickets__payment-methods {
     grid-area: payments;
 
     display: grid;
-    grid-template-columns: repeat(4, min-content);
+    grid-auto-flow: column;
+    grid-auto-columns: min-content;
     column-gap: 48px;
+
+    margin-bottom: 48px;
 }
 .buy-tickets__questions {
     grid-area: question;
+
+    margin-bottom: 16px;
 }
 .buy-tickets__question-phone {
     font-size: 21px;
@@ -65,9 +62,9 @@
 }
 .payment-methods__item {
 }
-.column-1 {
+.row-1 {
 }
-.column-2 {
+.row-2 {
 }
 
 
@@ -77,41 +74,223 @@
 }
 .price {
 }
+/* Legend Styles */
 .price__legend {
+    display: grid;
+    grid-template-areas: '. . item-1 . item-2 . item-3';
+    grid-template-columns: 200px 40px repeat(5, 120px);
+
+    padding: 0px 32px 8px;
 }
 .legend {
 }
-.legend__text-item {
-}
+/* Table Styles */
 .table-text-element {
-}
-.legend__item {
+    
 }
 .table-item-element {
+    
+}
+.legend__item {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 4px;
 }
 .legend__text {
+    color: rgb(50, 60, 71);
+
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 100%;
+    letter-spacing: 0.5px;
+
+    vertical-align: bottom;
 }
 .legend__stars {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2px;
 }
 .legend__star {
 }
-.filled-star {
+.legend__star:not(.filled-star) {
+    opacity: 0.4;
 }
 .price__table {
+    border: 1px solid rgba(242, 192, 63, 1);
+    border-radius: 5px;
 }
 .table {
 }
 .table__item {
+    display: grid;
+    grid-template-areas: 'text . item-1 . item-2 . item-3';
+    grid-template-columns: 200px 40px repeat(5, 120px);
+
+    padding: 16px 32px;
+}
+.table__item:nth-child(2n) {
+    background: rgba(242, 192, 63, 0.1);
+}
+.table__item:last-child {
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    grid-template-areas: '. . item-1 . item-2 . item-3';
+    grid-template-columns: 200px 4px 192px 48px 192px 48px 192px;
 }
 .table__text {
+    grid-area: text;
+
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0;
+
+    opacity: 0.87;
 }
 .table__check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: fit-content;
+
+    opacity: 0.74;
+
+    justify-self: center;
+    align-self: center;
+}
+:nth-of-type(1):is(.table__check, .table__button, .legend__item) {
+    grid-area: item-1;   
+}
+:nth-of-type(2):is(.table__check, .table__button, .legend__item) {
+    grid-area: item-2;   
+}
+:nth-of-type(3):is(.table__check, .table__button, .legend__item) { 
+    grid-area: item-3;  
 }
 .table__button {
+    height: 49px;
+
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+
+    border-radius: 2px;
+
+    transition: 0.3s all ease-out 0s;
 }
 .table-light-button {
+    border: 1px solid rgba(208, 215, 221, 1);
+    background-color: #fff;
 }
 .table-purple-button {
+    background: linear-gradient(121.1deg, rgba(101, 78, 163, 0.87) 35.26%, rgba(95, 75, 139, 0.87) 88.11%);
+    font-weight: 700;
+    color: white;
+}
+.table__button:hover {
+    background: rgba(242, 192, 63, 1);
+    color: #fff;
+    border: none;
+    font-weight: 700;
+}
+.table__button:active {
+    transform: scale(0.975);
 }
 
 /* Media requires */
+@media screen and (max-width: 1699px) {
+    .price__legend, .table__item {
+        grid-template-columns: 200px 40px 120px 32px 120px 32px 120px;
+    }
+    .table__item {
+        padding-right: 40px;
+    }
+    .table__item:last-child {
+        grid-template-columns: 200px 40px 120px 32px 120px 32px 120px;
+    }
+}
+@media screen and (max-width: 1399px) {
+    .main__buy-tickets {
+        flex-flow: column nowrap;
+        width: 100%;
+        align-items: center;
+        padding: 0;
+    }
+}
+@media screen and (max-width: 1299px) {
+    .buy-tickets__wrap {
+        display: grid;
+        grid-template-areas: 
+            'description payment'
+            'question tel'
+        ;
+        
+        grid-auto-rows: min-content;
+        grid-auto-columns: min-content;
+
+        row-gap: 40px;
+    }
+    .buy-tickets__wrap > * {
+        margin: 0;
+
+        align-self: center;
+        justify-self: center;
+    }
+    .buy-tickets__description {
+        grid-area: description;
+    }
+    .buy-tickets__payment-methods {
+        grid-area: payment;
+
+        display: grid;
+        grid-template-areas: 
+            'row-1 row-1'
+            'row-2 row-2'
+        ;
+        grid-auto-rows: min-content;
+        grid-auto-columns: min-content;
+        column-gap: 40px;
+        row-gap: 25px;
+
+        margin: 0 0 0 54px;
+    }
+    .payment-methods__item:nth-child(1n) {
+        grid-column: 1 / 2;
+    }
+    .payment-methods__item:nth-child(2n) {
+        grid-column: 2 / 3;
+    }
+    .row-1 {
+        grid-area: row-1;
+    }
+    .row-2 {
+        grid-area: row-2;
+    }
+    .buy-tickets__questions {
+        grid-area: question;
+    }
+    .buy-tickets__question-phone {
+        grid-area: tel;
+        font-size: 18px;
+        margin-left: 39px;
+    }
+}
+@media screen and (max-width: 799px) {
+    .price__legend, .table__item {
+        grid-template-columns: 120px 40px 80px 32px 80px 32px 80px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .table__item:last-child {
+        grid-template-columns: 120px 21px 120px 32px 120px 32px 120px;
+    }
+    .buy-tickets-text {
+        width: 288px;
+    }
+}
