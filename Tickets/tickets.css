@@ -13,19 +13,105 @@
 
 /* Tickets BLock Styles */
 .main__buy-tickets {
-    
+    display: grid;
+
+    grid-template-areas: 
+        'description price'
+        'payments price'
+        'question price'
+        'tel price'
+    ;
+
+    grid-template-columns: min-content min-content;
+    column-gap: 110px;
+    grid-template-rows: repeat(4, min-content);
+
+    padding-bottom: 313px;
+}
+.buy-tickets > p {
+    letter-spacing: 0;
+    line-height: 150%;
+}
+.buy-tickets__description {
+    grid-area: description;
+}
+.buy-tickets-text {
+    width: 480px;
+    font-size: 18px;
+}
+.buy-tickets__payment-methods {
+    grid-area: payments;
+
+    display: grid;
+    grid-template-columns: repeat(4, min-content);
+    column-gap: 48px;
+}
+.buy-tickets__questions {
+    grid-area: question;
+}
+.buy-tickets__question-phone {
+    font-size: 21px;
+    font-weight: 700;
+
+    background: linear-gradient(121.1deg, rgba(101, 78, 163, 0.87) 35.26%, rgba(95, 75, 139, 0.87) 88.11%);
+    background-clip: text;
+    color: transparent;
+
+    grid-area: tel;
 }
 
-/* Price table general styles */
+/* Payment Methods styles */
+.payment-methods {
+}
+.payment-methods__item {
+}
+.column-1 {
+}
+.column-2 {
+}
 
 
-/* Price table legend styles */
-
-
-/* Price table main part styles */
-
-
-/* Table items styles */
-
+/* Price styles */
+.buy-tickets__price {
+    grid-area: price;
+}
+.price {
+}
+.price__legend {
+}
+.legend {
+}
+.legend__text-item {
+}
+.table-text-element {
+}
+.legend__item {
+}
+.table-item-element {
+}
+.legend__text {
+}
+.legend__stars {
+}
+.legend__star {
+}
+.filled-star {
+}
+.price__table {
+}
+.table {
+}
+.table__item {
+}
+.table__text {
+}
+.table__check {
+}
+.table__button {
+}
+.table-light-button {
+}
+.table-purple-button {
+}
 
 /* Media requires */
