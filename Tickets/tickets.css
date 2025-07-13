@@ -227,7 +227,7 @@
     .buy-tickets__wrap {
         display: grid;
         grid-template-areas: 
-            'description payment'
+            'description payments'
             'question tel'
         ;
         
@@ -242,12 +242,7 @@
         align-self: center;
         justify-self: center;
     }
-    .buy-tickets__description {
-        grid-area: description;
-    }
     .buy-tickets__payment-methods {
-        grid-area: payment;
-
         display: grid;
         grid-template-areas: 
             'row-1 row-1'
@@ -272,11 +267,7 @@
     .row-2 {
         grid-area: row-2;
     }
-    .buy-tickets__questions {
-        grid-area: question;
-    }
     .buy-tickets__question-phone {
-        grid-area: tel;
         font-size: 18px;
         margin-left: 39px;
     }
@@ -290,7 +281,40 @@
     .table__item:last-child {
         grid-template-columns: 120px 21px 120px 32px 120px 32px 120px;
     }
+    .buy-tickets__wrap {
+        padding: 0 16px;
+    }
     .buy-tickets-text {
-        width: 288px;
+        width: 62.5vw;
+    }
+}
+@media screen and (max-width: 599px) {
+    .buy-tickets__wrap {
+        grid-template-areas: 
+            'description'
+            'payments'
+            'question'
+            'tel'
+        ;
+    }
+    .buy-tickets__wrap > * {
+        margin: 0;
+    }
+    .buy-tickets__price {
+        width: 100%;
+        overflow-x: auto;
+    }
+    .price__legend {
+        padding-bottom: 0;
+    }
+    .price__table {
+        border: none;
+    }
+    .buy-tickets-text {
+        width: 90vw;
+    }
+    .buy-tickets__wrap > * {
+        align-self: start;
+        justify-self: start;
     }
 }
