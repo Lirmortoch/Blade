@@ -31,16 +31,6 @@
     letter-spacing: 0;
     line-height: 150%;
 }
-.buy-tickets__payment-methods {
-    grid-area: payments;
-
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: min-content;
-    column-gap: 48px;
-
-    margin-bottom: 48px;
-}
 .buy-tickets__questions {
     grid-area: question;
 
@@ -58,21 +48,20 @@
 }
 
 /* Payment Methods styles */
-.payment-methods {
-}
-.payment-methods__item {
-}
-.row-1 {
-}
-.row-2 {
-}
+.buy-tickets__payment-methods {
+    grid-area: payments;
 
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min-content;
+    column-gap: 48px;
+
+    margin-bottom: 48px;
+}
 
 /* Price styles */
 .buy-tickets__price {
     grid-area: price;
-}
-.price {
 }
 /* Legend Styles */
 .price__legend {
@@ -82,15 +71,7 @@
 
     padding: 0px 32px 8px;
 }
-.legend {
-}
 /* Table Styles */
-.table-text-element {
-    
-}
-.table-item-element {
-    
-}
 .legend__item {
     display: flex;
     flex-flow: column nowrap;
@@ -113,16 +94,12 @@
     flex-flow: row nowrap;
     gap: 2px;
 }
-.legend__star {
-}
 .legend__star:not(.filled-star) {
     opacity: 0.4;
 }
 .price__table {
     border: 1px solid rgba(242, 192, 63, 1);
     border-radius: 5px;
-}
-.table {
 }
 .table__item {
     display: grid;
@@ -201,6 +178,49 @@
 }
 .table__button:active {
     transform: scale(0.975);
+}
+
+.pop-up {
+    display: block;
+    
+    position: absolute;
+    z-index: 10;
+
+    pointer-events: none;
+    cursor: none;
+
+    transition: all 0.3s ease-out 0s;
+    transform: scale(0);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pop-up-background {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(48, 48, 48, 0.9);
+}
+.pop-up.active {
+    transform: scale(1);
+    pointer-events: all;
+    cursor: auto;
+}
+.pop-up__block {
+    z-index: 11;
+    transition: all 0.3s ease-out 0s;
+}
+.pop-up-wrap {
+    padding: 40px 40px 48px;
+}
+.pop-up__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.pop-up__title {
+    margin-top: 8px;
 }
 
 /* Media requires */
