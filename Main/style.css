@@ -136,6 +136,11 @@ html {
     margin: 7.188vw 0 2.5vw 0;
 }
 
+/* Buy tickets button styles */
+.main__buy-tickets-btn {
+    margin-top: 6.25vw;
+}
+
 @media screen and (max-width: 1900px) {
   .mtb__tag {
     margin-top: 5.833vw;
