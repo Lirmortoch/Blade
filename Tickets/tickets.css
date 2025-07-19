@@ -148,38 +148,14 @@
 :nth-of-type(3):is(.table__check, .table__button, .legend__item) { 
     grid-area: item-3;  
 }
-.table__button {
-    height: 49px;
-
-    font-size: 18px;
-    line-height: 100%;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-align: center;
-
-    border-radius: 2px;
-
-    transition: 0.3s all ease-out 0s;
-}
-.table-light-button {
-    border: 1px solid rgba(208, 215, 221, 1);
-    background-color: #fff;
-}
-.table-purple-button {
+button.table-purple-button {
     background: linear-gradient(121.1deg, rgba(101, 78, 163, 0.87) 35.26%, rgba(95, 75, 139, 0.87) 88.11%);
     font-weight: 700;
     color: white;
-}
-.table__button:hover {
-    background: rgba(242, 192, 63, 1);
-    color: #fff;
     border: none;
-    font-weight: 700;
-}
-.table__button:active {
-    transform: scale(0.975);
 }
 
+/* Pop-Up styles */
 .pop-up {
     display: block;
     
@@ -195,10 +171,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    flex-grow: 5;
 }
 .pop-up-background {
     width: 100vw;
     height: 100vh;
+    min-height: 100vh;
 
     background-color: rgba(48, 48, 48, 0.9);
 }
@@ -223,6 +202,10 @@
 }
 .pop-up__title {
     margin: 8px 0px 20px;
+
+    font-weight: 400;
+
+    flex: 0 0 auto;
 }
 .pop-up__text {
     margin: 0px 0px 48px;
@@ -231,6 +214,8 @@
     font-size: 40px;
     line-height: 100%;
     letter-spacing: 0;
+
+    width: 696px;
 }
 .title-check-mark {
     background: linear-gradient(121.1deg, rgba(101, 78, 163, 0.87) 35.26%, rgba(95, 75, 139, 0.87) 88.11%);
@@ -246,9 +231,12 @@
     justify-content: center;
 
     margin-bottom: 32px;
+
+    border-radius: 50%;
 }
 .title-check-mark svg {
     width: 50%;
+    height: 24px;
 }
 .header-close-btn {
     display: flex;
@@ -281,7 +269,7 @@
     width: 28px;
 }
 .header-close-btn__wrap::after {
-    transform: rotate(45deg) translate(-15%, -100%);
+    transform: rotate(45deg) translate(-14%, -100%);
     margin: 0;
 }
 .header-close-btn__wrap::before {
@@ -291,13 +279,44 @@
     color: var(--main-color);
     background-color: var(--second-color);
 }
-.pop-up__form > fieldset {
+.pop-up-button {
+    width: 200px;
+}
+/* Tickets Form Styles */
+.tickets-form > fieldset {
     margin-bottom: 48px;
 }
-.pop-up__form > fieldset > *:not(.pop-up-form__radio-group) {
+
+/* Form Styles */
+.form {
+    width: 540px;
+}
+.form__fieldset {
+    margin-bottom: 48px;
+}
+.form__group > *:not(.form__radio-group) {
     display: block;
 }
-.pop-up-form__label {
+.form__input::placeholder {
+    opacity: 0.5;
+}
+.form__input:invalid {
+    border-color: rgba(255, 0, 0, 1);
+}
+.form__wrong-input-message {
+    color: rgba(255, 0, 0, 1);
+    
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 150%;
+    letter-spacing: 0px;
+
+    margin-top: 9px;
+}
+.form__input:focus {
+    border-color: rgba(242, 192, 63, 1);
+}
+.form__label {
     margin-bottom: 16px;
 
     font-weight: 700;
@@ -309,30 +328,99 @@
 
     opacity: 0.32;
 }
-.pop-up__form input:not([type="radio"]), .pop-up-form__radio-group label {
+.form__input {
+    width: 100%;
+
+    border-bottom: 1px solid rgba(48, 48, 48, 0.16);
+    padding-bottom: 8px;
+}
+.form__input, .form__radio-label {
     font-weight: 400;
     font-size: 18px;
     
     line-height: 150%;
     letter-spacing: 0px;
 }
-.pop-up-form__radio-group {
-    display: flex;
-    align-items: center;
-}
-.pop-up__form input::placeholder {
-    opacity: 0.5;
-}
-.pop-up__form input[type="radio"] {
-    transition: all 0.3s ease-out 0s;
+.form__input-radio {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+
+    font: inherit;
+    color: currentColor;
 
     width: 24px;
     height: 24px;
 
-    margin-right: 10px;
+    border: 1px solid rgba(208, 215, 221, 1);
+    border-radius: 50%;
+
+    align-self: center;
+    justify-self: center;
+
+    display: grid;
+    place-content: center;
+
+    transition: 0.3s all ease-in-out;
 }
-.pop-up-form__radio-group label:not(:last-child) {
+.form__input-radio::before {
+    width: 12px;
+    height: 9px;
+
+    display: inline-block;
+    content: '';
+
+    mask: url('../Tickets/img/check-mark.svg') no-repeat 50% 50%;
+    mask-size: cover;
+
+    background-color: white;
+
+    transform: scale(0);
+    transition: 0.3s all ease-in-out;
+}
+.form__input-radio:checked {
+    background: linear-gradient(121.1deg, rgba(101, 78, 163, 0.87) 35.26%, rgba(95, 75, 139, 0.87) 88.11%);
+}
+.form__input-radio:checked:before {
+    transform: scale(1);
+}
+.form__radio-label {
+    display: grid;
+    grid-template-columns: 24px auto;
+    gap: 10px;
+}
+.form__radio-group {
+    display: flex;
+    align-items: center;
+}
+.form__radio-group label:not(:last-child) {
     margin-right: 24px;
+}
+
+/* Common buttons styles */
+.common-button-1 {
+    height: 49px;
+
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0.08em;
+    text-align: center;
+
+    border-radius: 2px;
+
+    transition: 0.3s all ease-out 0s;
+
+    border: 1px solid rgba(208, 215, 221, 1);
+    background-color: #fff;
+}
+.common-button-1:hover {
+    background: rgba(242, 192, 63, 1);
+    color: #fff;
+    border: none;
+    font-weight: 700;
+}
+.common-button-1:active {
+    transform: scale(0.975);
 }
 
 /* Media requires */
@@ -348,6 +436,9 @@
     }
 }
 @media screen and (max-width: 1399px) {
+    body.pop-up-lock {
+        overflow: hidden;
+    }
     .main__buy-tickets {
         flex-flow: column nowrap;
         width: 100%;
@@ -403,6 +494,28 @@
         font-size: 18px;
         margin-left: 39px;
     }
+
+    /* Pop up styles */
+    .pop-up__block {
+        width: 100%;
+        height: 100%;
+    }
+    .pop-up__title {
+        margin-top: 134px;
+    }
+    .pop-up-text:not(.title-check-mark) {
+        width: 78.125vw;
+
+        font-size: 32px;
+        line-height: 120%;
+    }
+    .pop-up__wrap {
+        padding-top: 22px;
+    }
+    /* Styles for header logo when pop-up active */
+    body.pop-up-lock .header__logo {
+        z-index: 11;
+    }
 }
 @media screen and (max-width: 799px) {
     .price__legend, .table__item {
@@ -448,5 +561,20 @@
     .buy-tickets__wrap > * {
         align-self: start;
         justify-self: start;
+    }
+
+    /* Pop up styles */
+    .pop-up__wrap {
+        padding: 16px 16px 44px;
+    }
+    .pop-up-text:not(.title-check-mark), .form {
+        width: 90vw;
+    }
+    .form__radio-group {
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        flex-flow: column nowrap;
+        gap: 20px;
     }
 }

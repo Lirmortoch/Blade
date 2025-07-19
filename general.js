@@ -185,3 +185,9 @@ function touchEndFnc(e) {
 
 carouselWrap.addEventListener('touchstart', touchStartFnc);
 carouselWrap.addEventListener('touchend', touchEndFnc);
+
+// Pop-up
+class PopUp {
+    
+}
+
