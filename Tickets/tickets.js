@@ -1,3 +1,4 @@
+// Common functions for elements (функции, которые позволяют сократить количество кода + расширяют функциональность, хотя эти функции далеки от идеала)
 Element.prototype.clearHTMLElement = function() {
     this.innerHTML = '';
     return this;
@@ -6,6 +7,16 @@ Element.prototype.appendElement = function(elem) {
     if (/(^<.+>[\n\s+.]+<\/.+>|.+$)/gmi.test(elem)) this.insertAdjacentHTML('afterbegin', elem);
     else this.textContent = elem;
 }
+function showWrongInputMsg(e) {
+    e.target.parentElement.insertAdjacentHTML('beforeend', `<p class='form__wrong-input-message'>Недопустимое значение поля. Пожалуйста, повторите ввод.</p>`);
+}
+function hideWrongInputMsg(e) {
+    e.target.parentElement.querySelector('.form__wrong-input-message')?.remove();
+}
+function showStatus(e) {
+    console.log(e, e.target.invalid)
+}
+// Pop Up Functions
 function hidePopUp(e) {
     const btn = e.target.closest('.pop-up__close-btn');
 
@@ -24,17 +35,16 @@ function showPopUpContent(e) {
     if (!btn) return;
 
     const btnText = (btn.closest('.open-modal-btn-text') || btn.querySelector('.open-modal-btn-text')).textContent.toLowerCase();
+    
     const title = document.querySelector('.pop-up__title');
     const popUp = document.querySelector('.pop-up');
 
     let elem, titleContent;
 
-    e.preventDefault();
-
     if (btnText === 'купить') {
         elem = 
             `
-                <form class='pop-up__form pop-up-form form tickets-form' action='#' method='POST'>
+                <form class='pop-up__form pop-up-form form tickets-form' action='#'>
                         <fieldset class='form__group'>
                             <label class='form__label' for='input-name'>Имя</label>
                             <input class='form__input' type='text' name='input-name' id='input-name' placeholder='Введите имя'>
@@ -120,17 +130,13 @@ function showPopUpContent(e) {
         document.body.classList.add('pop-up-lock');
         window.scrollTo(0, 0);
     }
+
     popUp.classList.add('active');
 
     document.querySelectorAll('.form__input').forEach(item => {
-        item.addEventListener('invalid', e => {
-            e.preventDefault();
-            e.target.parentElement.insertAdjacentHTML('beforeend', `<p class='form__wrong-input-message'>Недопустимое значение поля. Пожалуйста, повторите ввод.</p>`);
-        });
-
-        item.addEventListener('focus', e => {
-            e.target.parentElement.querySelector('.form__wrong-input-message')?.remove();
-        });
+        item.addEventListener('invalid', showWrongInputMsg);
+        item.addEventListener('input', showStatus);
+        item.addEventListener('valid', hideWrongInputMsg);
     });
 }
 function createPopUp() {

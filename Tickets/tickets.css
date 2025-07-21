@@ -160,7 +160,7 @@ button.table-purple-button {
     display: block;
     
     position: absolute;
-    z-index: 10;
+    z-index: 5;
 
     pointer-events: none;
     cursor: none;
@@ -512,9 +512,8 @@ button.table-purple-button {
     .pop-up__wrap {
         padding-top: 22px;
     }
-    /* Styles for header logo when pop-up active */
-    body.pop-up-lock .header__logo {
-        z-index: 11;
+    .header__logo {
+        z-index: 6;
     }
 }
 @media screen and (max-width: 799px) {
@@ -576,5 +575,13 @@ button.table-purple-button {
         justify-content: start;
         flex-flow: column nowrap;
         gap: 20px;
+    }
+    .pop-up__header {
+        position: relative;
+    }
+    .pop-up__header > .pop-up__close-btn {
+        position: absolute;
+        margin-top: 10px;
+        right: 0;
     }
 }

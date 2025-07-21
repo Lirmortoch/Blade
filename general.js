@@ -76,19 +76,15 @@ function toggleMobileMenu(e) {
 document.addEventListener('click', toggleMobileMenu);
 
 // Carousel
-class Carousel {
-    
-}
-
 const carouselItemCount = document.querySelectorAll('.carousel-item').length;
 
-function createPagnitation() {
+function createPagination() {
     const paginationBlock = document.querySelector('.carousel__pagnitation');
     const paginationItem = '<div class=\'carousel-pagnitation__item active\'></div>';
 
-    paginationBlock.innerHTML += paginationItem + paginationItem.replace('active', '').repeat(carouselItemCount-1);
+    paginationBlock?.insertAdjacentHTML('beforeend', paginationItem + paginationItem.replace('active', '').repeat(carouselItemCount-1));
 }
-createPagnitation();
+createPagination();
 
 const carouselWrap = document.querySelector('.carousel__wrap');
 let itemCount = 1;
@@ -183,11 +179,8 @@ function touchEndFnc(e) {
     checkDirection();
 }
 
-carouselWrap.addEventListener('touchstart', touchStartFnc);
-carouselWrap.addEventListener('touchend', touchEndFnc);
+carouselWrap?.addEventListener('touchstart', touchStartFnc);
+carouselWrap?.addEventListener('touchend', touchEndFnc);
 
 // Pop-up
-class PopUp {
-    
-}
 
