@@ -1,0 +1,69 @@
+@import url('../css/general.css');
+@import url('../css/common-styles-white-pages.css');
+
+.main__wrap {
+    display: grid;
+    grid-template-columns: min-content min-content;
+    grid-template-rows: min-content min-content;
+    column-gap: 121px;
+    row-gap: 32px;
+}
+.main__contacts {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+.email {
+    background: repeating-linear-gradient();
+}
+.contacts {
+}
+.contacts__item {
+    width: 150px;
+}
+.contacts__label {
+}
+.contacts__contact {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0px;
+}
+.contact {
+}
+.contact__item {
+}
+.contact__links {
+}
+.people-links {
+}
+.social-links {
+}
+.people-links__wrap {
+}
+.social-links__item {
+}
+.main__map {
+}
+.map {
+}
+.map__map {
+}
+.map__frame {
+}
+.main__contact-form {
+    grid-row: 1 / 3;
+    grid-column: 2 / 3;
+}
+.form {
+}
+.contacts-form {
+}
+.form__group {
+}
+.form__label {
+}
+.form__input {
+}
+.form__submit-btn {
+}
