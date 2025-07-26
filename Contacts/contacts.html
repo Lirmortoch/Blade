@@ -212,10 +212,10 @@
                     <div class="contacts__item">
                         <h4 class="contacts__label label">Для связи</h4>
 
-                        <p class="contacts__contact contact">
+                        <address class="contacts__contact contact">
                             <a href="tel:+79244567890" aria-label="Позвонить по номеру +7 924 456 78 90" class="contact__item">+7 (924) 456 78 90</a>
                             <a href="mailto:bfw@gmail.com" aria-label="Написать письмо на email bfw@gmail.com" class="contact__item email">bfw@gmail.com</a>
-                        </p>
+                        </address>
                     </div>
 
                     <div class="contacts__item">
@@ -248,11 +248,17 @@
                 </div>
 
                 <div class="main__map map">
-                    <img src="../Contacts/img/map.png" alt="Место на карте" class="map__map">
-                    <img src="../img/рамка.svg" alt="Рамка" class="map__frame">
+                    <div class="map__wrap">
+                        <div class="map__map">
+                            <img src="../Contacts/img/map.png" alt="Место на карте">
+                        </div>
+                        <div class="map__frame">
+                        </div>
+                    </div>
                 </div>
 
-                <form action="#" class="main__contact-form form contacts-form">
+                <h2 class="main__second-title title-2">Остались вопросы?Спросите нас! Мы ответим!</h2>
+                <form action="#" class="main__contact-form form contacts-form" onsubmit="return false" method="post">
                     <fieldset class="form__group">
                         <label for="input-name" class="form__label">Имя</label>
                         <input type="text" name="input-name" id="input-name" class="form__input" placeholder="Введите имя" required>
@@ -268,10 +274,17 @@
                         <input type="text" name="input-msg" id="input-msg" class="form__input" placeholder="Задайте любой вопрос" required>
                     </fieldset>
 
-                    <button type="submit" class="form__submit-btn common-button-1 uppercase">Отправить</button>
+                    <button type="submit" class="form__submit-btn common-button-1 uppercase open-modal-btn open-modal-btn-text">Отправить</button>
 
                     <!-- <button type="submit" class="form__submit-btn open-modal-btn open-modal-btn-text common-button-1 uppercase">Отправить</button> -->
                 </form>
+
+                <button class="main__ask-questions-button buy-tickets-btn open-modal-btn uppercase">
+                    <span class="buy-tickets-btn__text open-modal-btn-text">Задать вопрос</span>
+                    <span class="buy-tickets-btn__arrow">
+                        <img src="../img/icons/arrow.svg" alt="links arrow">
+                    </span>
+                </button>
             </div>
         </main>
     </div>

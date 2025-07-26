@@ -32,6 +32,11 @@ body {
     flex-grow: 1;
 }
 
+.buy-tickets-btn__text {
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+
 /* Media requires */
 @media screen and (max-width: 1299px) {
     .menu__toggler-wrap::after, .menu__toggler-wrap::before, .menu__toggler-wrap span {

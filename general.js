@@ -191,11 +191,30 @@ Element.prototype.appendElement = function(elem) {
     if (/(^<.+>[\n\s+.]+<\/.+>|.+$)/gmi.test(elem)) this.insertAdjacentHTML('afterbegin', elem);
     else this.textContent = elem;
 }
+
 function showWrongInputMsg(e) {
-    e.target.parentElement.insertAdjacentHTML('beforeend', `<p class='form__wrong-input-message'>Недопустимое значение поля. Пожалуйста, повторите ввод.</p>`);
+    const wrongInputMsg = e.target.parentElement.querySelector('.form__wrong-input-message');
+   
+    e.preventDefault();
+    
+    if (wrongInputMsg) {
+        wrongInputMsg.classList.add('awake');
+
+        setTimeout(() => wrongInputMsg.classList.remove('awake'), 1500);
+    }
+    else {
+        e.target.parentElement.insertAdjacentHTML('beforeend', `<p class='form__wrong-input-message'>Недопустимое значение поля. Пожалуйста, повторите ввод.</p>`);
+    }
 }
 function hideWrongInputMsg(e) {
     e.target.parentElement.querySelector('.form__wrong-input-message')?.remove();
+}
+function addCustomWrongInputMessage() {
+    document.querySelectorAll('.form__input').forEach(item => {
+        item.addEventListener('invalid', showWrongInputMsg);
+
+        item.addEventListener('focus', hideWrongInputMsg);
+    });
 }
 
 // Pop-up
@@ -206,7 +225,7 @@ function hidePopUp(e) {
 
     const title = document.querySelector('.pop-up__title');
 
-    if (title.innerHTML.includes('svg')) title.classList.remove('title-check-mark');
+    if (title.classList.contains('title-check-mark')) title.classList.remove('title-check-mark');
 
     document.querySelector('.pop-up').classList.remove('active');
     document.body.classList.remove('pop-up-lock');
@@ -220,13 +239,14 @@ function showPopUpContent(e) {
     
     const title = document.querySelector('.pop-up__title');
     const popUp = document.querySelector('.pop-up');
+    const form = document.querySelector('.form');
 
     let elem, titleContent;
 
     if (btnText === 'купить') {
         elem = 
             `
-                <form class='pop-up__form pop-up-form form tickets-form' action='#'>
+                <form class='pop-up__form pop-up-form form tickets-form' action='#' onsubmit="return false" method="post">
                         <fieldset class='form__group'>
                             <label class='form__label' for='input-name'>Имя</label>
                             <input class='form__input' type='text' name='input-name' id='input-name' placeholder='Введите имя' required>
@@ -240,7 +260,7 @@ function showPopUpContent(e) {
                 
                             <div class="form__radio-group">
                                 <label class='form__radio-label'>
-                                    <input class='form__input-radio' type='radio' name='pop-up-input-radio' id='input-radio-viewer' value='viewer'>
+                                    <input class='form__input-radio' type='radio' name='pop-up-input-radio' id='input-radio-viewer' value='viewer' checked>
                                     Зритель
                                 </label>
                                 
@@ -267,7 +287,7 @@ function showPopUpContent(e) {
 
         titleContent = 'Чтобы приобрести билет, заполните форму ниже. Мы свяжемся с вами по вопросу оплаты.';
     }
-    else if (/(бронь билета)|(отправить)/.test(btnText)) {
+    else if (/(бронь билета)|(отправить)/.test(btnText) && form.checkValidity()) {
         elem = 
             `
                 <p class='pop-up__text pop-up-text'>
@@ -277,25 +297,31 @@ function showPopUpContent(e) {
             `;
         
         titleContent = '<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.5242 2.84518L10.8988 4.51251L6.0237 9.51152C5.73022 9.81387 5.32363 10 4.87512 10C4.42661 10 4.02003 9.81387 3.72557 9.51152L0.475812 6.17885C0.181355 5.87749 0 5.4609 0 5C0 4.07918 0.727368 3.33366 1.62439 3.33366C2.07388 3.33366 2.47949 3.5198 2.77394 3.82214L4.87512 5.97597L8.60069 2.15482L10.2261 0.488477C10.5195 0.187118 10.9261 0 11.3746 0C12.2726 0 13 0.746504 13 1.66634C13 2.12724 12.8186 2.54382 12.5242 2.84518Z" fill="currentColor"/></svg>';
+
+        title.classList.add('title-check-mark');
     }
     else if (btnText === 'задать вопрос') {
         elem = 
             `
-                <form class='pop-up__form pop-up-form' action='#' method='POST'>
-                        <fieldset class='pop-up-form__group'>
-                            <label class='pop-up-form__label' for=''>Имя</label>
-                            <input class='pop-up-form__input' type='text' name='input-name' id='input-name' placeholder='Введите имя' required>
-                        </fieldset>
-                        <fieldset class='pop-up-form__group'>
-                            <label class='pop-up-form__label' for='input-email'>Email</label>
-                            <input class='pop-up-form__input' type='email' name='input-email' id='input-email' placeholder='Введите e-mail' required>
-                        </fieldset>
-                        <fieldset class='pop-up-form__group'>             
-                            <label for='input-question'>Зритель</label>
-                            <input class='pop-up-form__input' type='text' name='input-question' id='input-question'>
-                        </fieldset>
+                <form action="#" class="main__contact-form form contacts-form" onsubmit="return false" method="post">
+                    <fieldset class="form__group">
+                        <label for="input-name" class="form__label">Имя</label>
+                        <input type="text" name="input-name" id="input-name" class="form__input" placeholder="Введите имя" required>
+                    </fieldset>
 
-                        <button type='submit' class='pop-up-form__submit-btn open-modal-btn-text common-button-1 uppercase'>Отправить</button>
+                    <fieldset class="form__group">
+                        <label for="input-email" class="form__label">Email</label>
+                        <input type="email" name="input-email" id="input-email" class="form__input" placeholder="Введите e-mail" required>
+                    </fieldset>
+
+                    <fieldset class="form__group">
+                        <label for="input-msg" class="form__label">Сообщение</label>
+                        <input type="text" name="input-msg" id="input-msg" class="form__input" placeholder="Задайте любой вопрос" required>
+                    </fieldset>
+
+                    <button type="submit" class="form__submit-btn common-button-1 uppercase open-modal-btn open-modal-btn-text">Отправить</button>
+
+                    <!-- <button type="submit" class="form__submit-btn open-modal-btn open-modal-btn-text common-button-1 uppercase">Отправить</button> -->
                 </form>
             `;
 
@@ -304,21 +330,15 @@ function showPopUpContent(e) {
 
     title.clearHTMLElement().appendElement(titleContent);
     document.querySelector('.pop-up__main-part').innerHTML = elem;
-
-    if (titleContent.includes('svg')) title.classList.add('title-check-mark');
-
+    
     if (window.innerWidth < 1400) {
         document.body.classList.add('pop-up-lock');
         window.scrollTo(0, 0);
     }
-
+    
     popUp.classList.add('active');
 
-    document.querySelectorAll('.form__input').forEach(item => {
-        item.addEventListener('invalid', showWrongInputMsg);
-
-        item.addEventListener('valid', hideWrongInputMsg);
-    });
+    addCustomWrongInputMessage();
 }
 function createPopUp() {
     document.body.insertAdjacentHTML(

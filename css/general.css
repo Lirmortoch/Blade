@@ -475,10 +475,11 @@ button {
 .pop-up__text {
     margin: 0px 0px 48px;
 }
-.pop-up-text {
+.pop-up-text, .title-2 {
     font-size: 40px;
     line-height: 100%;
     letter-spacing: 0;
+    font-weight: 400;
 
     width: 696px;
 }
@@ -581,6 +582,21 @@ button {
     letter-spacing: 0px;
 
     margin-top: 9px;
+
+    transition: 380ms;
+
+    transform-origin: left center;
+}
+@keyframes wrongAwake {
+    0% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.form__wrong-input-message.awake {
+    animation: wrongAwake 0.75s linear;
 }
 .form__input:focus {
     border-color: rgba(242, 192, 63, 1);
@@ -669,7 +685,6 @@ button {
 /* Common buttons styles */
 .common-button-1 {
     height: 49px;
-    width: 200px;
 
     font-size: 18px;
     line-height: 100%;
