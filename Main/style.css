@@ -12,8 +12,10 @@ html {
 /* Wrap styles */
 .wrap {
     display: grid;
-    grid-template-columns: auto 1fr 33.018vw;
+    grid-template-columns: auto 1fr min-content;
     grid-template-rows: 27px repeat(2, min-content);
+
+    overflow-x: hidden;
 }
 
 /* Header styles */ 
@@ -52,6 +54,12 @@ html {
 }
 .mtb__title {
     margin: 16px 0 0 0;
+
+    font-weight: 900;
+
+    line-height: 110.00000000000001%;
+    letter-spacing: 0.04em;
+
 }
 
 /* About styles */
@@ -70,11 +78,15 @@ html {
     gap: 12px;
 }
 .about__icon {
-    width: 44px;
+    /* width: 44px; */
 }
 .about__text {
     opacity: 0.74;
     font-size: 18px;
+
+    line-height: 100%;
+    letter-spacing: 0em;
+    font-weight: 400;
 }
 .new-line-text {
     display: block;
@@ -90,28 +102,31 @@ html {
 .right-side-decor {
     grid-row: 2 / -1;
     grid-column: 3 / -1;
+
+    width: 839px;
+    height: 881px;
 }
 .right-side-decor__wrap {
     height: 100%;
-    position: relative;
+    width: 100%;
 
-    display: grid;
-    grid-template-rows: 36px 1fr;
-    grid-template-columns: 1fr;
+    position: relative;
+    
 }
 .right-side-decor__frame {
-    height: 46.758vw;
-    position: relative;
-    grid-row: 1 / 3;
-}
-.right-side-decor__photo {
-    height: 100%;
-    width: 45.086vw;
+    border: 4px solid rgba(245, 208, 111, 1);
+
+    width: 76.8772%;
+    height: 99.6595%;
 
     position: absolute;
-    right: 0;
-    z-index: 1;
-    grid-row: 2 / 3;
+    z-index: -1;
+    right: -28px;
+    top: -27px;
+}
+.right-side-decor__photo, .right-side-decor__photo > img {
+   width: 100%;
+   height: 100%;
 }
 .right-side-decor__photo-switch {
     width: 43.469px;
