@@ -8,15 +8,14 @@
 
 /* Main title styles */
 .main__title {
-    margin-bottom: 80px;
+    margin-top: 39px;
+    margin-bottom: 40px;
 }
 
 /* Tickets BLock Styles */
 .main__buy-tickets {
     display: flex;
     gap: max(40px, min(110px, 3.729vw));
-
-    padding-bottom: 10vh;
 
     width: 95%;
 }
@@ -45,6 +44,9 @@
     color: transparent;
 
     grid-area: tel;
+}
+.buy-tickets__wrap {
+    margin-top: 40px;
 }
 
 /* Payment Methods styles */

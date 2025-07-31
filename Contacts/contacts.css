@@ -6,20 +6,17 @@
     grid-template-columns: min-content min-content;
     grid-template-rows: min-content min-content;
     column-gap: max(40px, min(121px, 6.302vw));
-    row-gap: 32px;
 
     padding-bottom: 123px;
 }
 .main__title {
-    margin-bottom: 80px;
+    margin-top: 40px;
+    margin-bottom: 70px;
 }
 .main__contacts {
     display: flex;
     flex-direction: row;
     gap: 80px;
-}
-.email {
-    background: repeating-linear-gradient();
 }
 .contacts__item {
     width: 150px;
@@ -37,9 +34,14 @@
     grid-row: 1 / 2;
 
     width: 593px;
+
+    margin-top: 6px;
+    margin-bottom: 29px;
 }
 .main__map {
     width: 42.188vw;
+
+    margin-top: 10px;
 }
 .main__map * {
     width: 100%;
@@ -61,6 +63,8 @@
 
 .main__contact-form {
     grid-row: 2 / 3;
+
+    margin-top: 31px;
 }
 .form__submit-btn {
     width: 200px;
@@ -68,6 +72,10 @@
 
 .main__ask-questions-button {
     display: none;
+}
+
+.contacts-form > fieldset:last-of-type {
+    margin-bottom: 106px;
 }
 
 @media screen and (max-width: 1449px) {

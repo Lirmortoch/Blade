@@ -10,13 +10,19 @@ body {
     flex-flow: column nowrap;
 }
 /* Header and navigation styles */
+.header {
+    padding-top: 7px;
+}
 .header__menu, .menu__toggler {
    margin-left: auto;
+}
+.header__logo {
+    padding-top: 4px;
 }
 
 /* tag styles */
 .mtb__tag {
-    margin-top: calc(2.2vw - 0.7%);
+    margin-top: calc(2.2vw - 0.3%);
     font-size: 17px;
 }
 

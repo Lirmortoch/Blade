@@ -1,4 +1,5 @@
 @import url('../css/general.css');
+@import url('../css/common-styles-white-pages.css');
 
 html {
     --main-color: #303030;
@@ -12,35 +13,13 @@ body {
     flex-flow: column nowrap;
 }
 
-/* Header and navigation styles */
-.header__menu, .menu__toggler {
-   margin-left: auto;
-}
-
-/* tag styles */
-.mtb__tag {
-    margin-top: calc(2.2vw - 0.7%);
-    font-size: 17px;
-}
-
-/* wrap styles */
-.wrap {
-    display: grid;
-    grid-template-columns: min-content 91%;
-    grid-template-rows: 100%;
-
-    width: 100%;
-    margin: 0 auto 0 0;
-
-    flex-grow: 1;
-}
-
 .main__carousel {
     gap: 64px;
 
     height: fit-content;
 }
 .main__title {
+    margin-top: 38px;
     margin-bottom: 40px;
 }
 .main__judges {

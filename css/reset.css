@@ -75,3 +75,8 @@ ul[role='list'],
 ol[role='list'] {
   list-style: none;
 }
+
+/* Reset address font styles */ 
+address {
+    font: inherit;
+}

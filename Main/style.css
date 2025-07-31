@@ -28,8 +28,8 @@ html {
 
 /* BFW styles */
 .bfw:not(.mobile-bfw) {
-    width: 70vw;
-    top: 4.427vw;
+    width: 71.1vw;
+    top: 3.227vw;
     left: 0;
 }
 
@@ -90,6 +90,7 @@ html {
 }
 .new-line-text {
     display: block;
+    margin-bottom: 5px;
 }
 .sup__text {
     
@@ -103,18 +104,19 @@ html {
     grid-row: 2 / -1;
     grid-column: 3 / -1;
 
-    width: 839px;
-    height: 881px;
+    width: 43.698vw;
+    height: 81.574vh;
+
+    align-self: end;
 }
 .right-side-decor__wrap {
     height: 100%;
     width: 100%;
 
     position: relative;
-    
 }
 .right-side-decor__frame {
-    border: 4px solid rgba(245, 208, 111, 1);
+    border: 10px solid rgba(245, 208, 111, 1);
 
     width: 76.8772%;
     height: 99.6595%;
@@ -134,7 +136,7 @@ html {
     position: absolute;
     z-index: 2;
     bottom: 5.1%;
-    right: 12.4%;
+    right: 9.3%;
     
 }
 .photo-switch__item {
