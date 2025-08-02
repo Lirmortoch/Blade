@@ -15,7 +15,7 @@ html {
     grid-template-columns: auto 1fr min-content;
     grid-template-rows: 27px repeat(2, min-content);
 
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 /* Header styles */ 
