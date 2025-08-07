@@ -39,7 +39,7 @@ html {
 
 .main-wrap {
     grid-column: 2 / 3;
-    grid-row: 3 / -1;
+    grid-row: 3 / 4;
 }
 .main-title-block {
     grid-row: 2 / 3;
@@ -201,39 +201,51 @@ html {
     .main__about {
         margin-top: 6px;
     }
-    .mtb__title {
-        margin-bottom: 74px;
-    }
 }
 @media screen and (max-width: 1299px) {
     .wrap {
         overflow-x: clip;
     }
- 
+    .main-title-block {
+        grid-column: 1 / -1;
+        width: 88.542vw;
+        margin-bottom: 74px;
+    }
+    .right-side-decor__frame {
+        top: -17px;
+        right: -22px;
+        border-width: 6.61px;
+    }
+    .right-side-decor__photo-switch {
+        bottom: 3.1%;
+        right: 21.3%;
+    }
+    .main-wrap {
+        margin-top: 6px;
+    }
     .menu__toggler-wrap::after, .menu__toggler-wrap::before, .menu__toggler-wrap span {
         background-color: #ffffff;
     }
 
-    .right-side-decor__photo, .right-side-decor__frame {
-        width: 52vw;
-    }
-    .right-side-decor__frame {
-        height: 100%;
-        right: max(-5%, -30px); 
-    }
-    .right-side-decor__photo {
-        right: max(-22%, -93px); 
+    .right-side-decor {
+        width: 68.849vw;
+        height: 59.418vh;
+
+        margin-top: 23px;
     }
 
     .bfw:not(.mobile-bfw) {
         left: -2.6vw;
-        width: 119.792vw;
+        width: 118.592vw;
         object-fit: cover;
+    }
+    .main__buy-tickets-btn {
+        margin-top: 16.425vw;
     }
 }
 @media screen and (max-width: 799px) {
     .bfw:not(.mobile-bfw) {
-        top: max(3vw, 25px);
+        top: max(3vw, 30px);
     }
 }
 @media screen and (max-width: 599px) {

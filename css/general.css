@@ -504,21 +504,27 @@ button {
     background-color: #fff;
 }
 .pop-up__wrap {
-    padding: 40px 40px 48px;
+    padding: 40px 40px 50px;
 }
 .pop-up__header {
     display: flex;
     justify-content: space-between;
 }
 .pop-up__title {
-    margin: 8px 0px 20px;
+    margin: 7px 0px 40px;
 
     font-weight: 400;
 
     flex: 0 0 auto;
 }
 .pop-up__text {
-    margin: 0px 0px 48px;
+    margin: 0px 0px 80px;
+}
+.pop-up-okay > p {
+    margin: 0 0 32px;
+}
+.pop-up-okay > button {
+    margin-top: 20px;
 }
 .pop-up-text, .title-2 {
     font-size: 40px;
@@ -836,9 +842,11 @@ button {
     /* Header styles */
     .header {
         height: 92px;
+        margin-left: 25px;
     }
     .header__logo {
-        z-index: 4;
+        z-index: 6;
+        width: 19.444%;
     }
     .header__logo img {
         width: 74.786%;
@@ -869,6 +877,8 @@ button {
         width: 44px;
         height: 44px;
         background-color: transparent;
+
+        margin-top: 10px;
     } 
     .menu__toggler-wrap {
         z-index: 5;
@@ -950,8 +960,9 @@ button {
         flex-flow: column nowrap;
     }
     .menu__nav a {
-        main-font-family: var(--second-main-font-family);
+        font-family: var(--second-font-family);
         font-size: 4em;
+        text-transform: none;
     }
     .current-page::after, .footer:not(.footer-mobile) {
         display: none;
@@ -962,7 +973,6 @@ button {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         gap: 0;
-        position: relative;
     }
     .left-side-decor__data {
         transform: none;
@@ -975,13 +985,15 @@ button {
         gap: 16px;
 
         position: absolute;
-        right: -117px;
+        left: 0px;
+
+        opacity: 0.5;
 
         margin: 24px 0;
     }
     .data__hor-line {
         display: block;
-        width: 100px;
+        width: 32px;
         background-color: white;
         height: 1px;
     }
@@ -1055,9 +1067,6 @@ button {
     }
     .pop-up__wrap {
         padding-top: 22px;
-    }
-    .header__logo {
-        z-index: 6;
     }
 }
 @media screen and (max-width: 799px) {

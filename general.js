@@ -223,12 +223,10 @@ function hidePopUp(e) {
 
     if (!btn) return;
 
-    const title = document.querySelector('.pop-up__title');
-
-    if (title.classList.contains('title-check-mark')) title.classList.remove('title-check-mark');
-
+    document.querySelector('.pop-up__title').classList.remove('title-check-mark');
     document.querySelector('.pop-up').classList.remove('active');
     document.body.classList.remove('pop-up-lock');
+    document.querySelector('.pop-up__main-part').classList.remove('pop-up-okay');
 }
 function showPopUpContent(e) {
     const btn = e.target.closest('.open-modal-btn');
@@ -237,13 +235,14 @@ function showPopUpContent(e) {
 
     const btnText = (btn.closest('.open-modal-btn-text') || btn.querySelector('.open-modal-btn-text')).textContent.toLowerCase();
     
-    const title = document.querySelector('.pop-up__title');
     const popUp = document.querySelector('.pop-up');
+    const title = popUp.querySelector('.pop-up__title');
     const form = document.querySelector('.form');
+    const mainPartOfPopUp = popUp.querySelector('.pop-up__main-part');
 
     let elem, titleContent;
 
-    if (btnText === 'купить') {
+    if (btnText === 'купить' && form?.checkValidity()) {
         elem = 
             `
                 <form class='pop-up__form pop-up-form form tickets-form' action='#' onsubmit="return false" method="post">
@@ -301,7 +300,7 @@ function showPopUpContent(e) {
         titleContent = '<svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.5242 2.84518L10.8988 4.51251L6.0237 9.51152C5.73022 9.81387 5.32363 10 4.87512 10C4.42661 10 4.02003 9.81387 3.72557 9.51152L0.475812 6.17885C0.181355 5.87749 0 5.4609 0 5C0 4.07918 0.727368 3.33366 1.62439 3.33366C2.07388 3.33366 2.47949 3.5198 2.77394 3.82214L4.87512 5.97597L8.60069 2.15482L10.2261 0.488477C10.5195 0.187118 10.9261 0 11.3746 0C12.2726 0 13 0.746504 13 1.66634C13 2.12724 12.8186 2.54382 12.5242 2.84518Z" fill="currentColor"/></svg>';
 
         title.classList.add('title-check-mark');
-
+        if (btnText === 'отправить') mainPartOfPopUp.classList.add('pop-up-okay');
         popUp.classList.add('active');
     }
     else if (btnText === 'задать вопрос') {
@@ -335,7 +334,7 @@ function showPopUpContent(e) {
     }
 
     title.clearHTMLElement().appendElement(titleContent);
-    document.querySelector('.pop-up__main-part').innerHTML = elem;
+    mainPartOfPopUp.innerHTML = elem;
     
     if (window.innerWidth < 1400) {
         document.body.classList.add('pop-up-lock');
