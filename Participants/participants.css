@@ -1,24 +1,12 @@
 @import url('../css/general.css');
 @import url('../css/common-styles-white-pages.css');
 
-html {
-    --main-color: #303030;
-    --second-color: #ffffff;
-    --third-color: #f2c03f;
-
-    --main-background: #ffffff;
-}
-body {
-    display: flex;
-    flex-flow: column nowrap;
-}
-
 .main {
 
 }
 .main__title {
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin-top: 9px;
+    margin-bottom: 60px;
 }
 
 /* main carousel */
@@ -247,15 +235,6 @@ body {
     .header a,  .mobile-lang-switch > * {
         color: var(--second-color);
     }
-    .mtb__tag {
-        margin-top: calc(2.2vw - 1.0%);
-    }
-
-    .wrap {
-        grid-template-rows: min-content 100%;
-        grid-template-columns: 100%;
-        padding: 0;
-    }
 
     .carousel__right-key, .carousel__left-key {
         svg {
@@ -300,19 +279,6 @@ body {
     .main {
         grid-row: 1 / 2;
     }
-    .left-side-decor {
-        grid-row: 2 / 3;
-        align-self: self-start;
-    }
-    .left-side-decor__data {
-        top: 0;
-        padding-bottom: 24px;
-        margin-bottom: 0;
-    }
-    
-    .data__hor-line {
-        background-color: var(--main-color);
-    }
 
     .carousel {
     
@@ -322,16 +288,6 @@ body {
     }
     .carousel-item {
         scroll-snap-align: center;
-    }
-}
-@media screen and (max-width: 999px) {
-    .mtb__tag {
-        margin-top: calc(2.2vw - 1.3%);
-    }
-}
-@media screen and (max-width: 799px) {
-    .mtb__tag {
-        display: none;
     }
 }
 @media screen and (max-width: 530px) {
@@ -428,10 +384,5 @@ body {
   and (aspect-ratio: 375/667) {
    .participant-item__carousel {
         height: 50vh;
-    }
-}
-@media screen and (max-height: 1000px) and (max-width: 799px) {
-    .left-side-decor {
-        display: none;
     }
 }

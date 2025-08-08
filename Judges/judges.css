@@ -17,15 +17,15 @@ body {
     gap: 64px;
 
     height: fit-content;
+
+    padding-bottom: 48px;
 }
 .main__title {
-    margin-top: 38px;
+    margin-top: 10px;
     margin-bottom: 40px;
 }
 .main__judges {
     width: 87%;
-
-    padding-bottom: 68px;
 
     gap: 64px;
 }
@@ -136,9 +136,6 @@ body {
     .header a,  .mobile-lang-switch > * {
         color: var(--second-color);
     }
-    .mtb__tag {
-        margin-top: calc(2.2vw - 1.0%);
-    }
 
     .wrap {
         grid-template-rows: min-content 100%;
@@ -151,38 +148,14 @@ body {
     }
     .main__title {
         margin-left: 48px;
-        margin-bottom: 73px;
+        margin-bottom: 57px;
     }
     .main__judges {
         width: 100%;
-        padding-bottom: 60px;
-    }
-    .left-side-decor {
-        grid-row: 2 / 3;
-        align-self: self-start;
-    }
-    .left-side-decor__data {
-        top: 0;
-        
-        margin-bottom: 0;
-    }
-    
-    .data__hor-line {
-        background-color: var(--main-color);
     }
 
     .carousel > button {
         z-index: 2;
-    }
-}
-@media screen and (max-width: 999px) {
-    .mtb__tag {
-        margin-top: calc(2.2vw - 1.3%);
-    }
-}
-@media screen and (max-width: 799px) {
-    .mtb__tag {
-        display: none;
     }
 }
 @media screen and (max-width: 599px) {
@@ -239,10 +212,5 @@ body {
         ;
 
         padding: 16px;
-    }
-}
-@media screen and (max-height: 1000px) and (max-width: 799px) {
-    .left-side-decor {
-        display: none;
     }
 }
