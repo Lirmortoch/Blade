@@ -21,8 +21,7 @@ body {
     padding-bottom: 48px;
 }
 .main__title {
-    margin-top: 10px;
-    margin-bottom: 40px;
+   margin: 38px 0;
 }
 .main__judges {
     width: 87%;
@@ -156,6 +155,11 @@ body {
 
     .carousel > button {
         z-index: 2;
+    }
+}
+@media screen and (max-width: 799px) {
+    .main__title {
+        margin-top: 9px;
     }
 }
 @media screen and (max-width: 599px) {

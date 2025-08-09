@@ -14,9 +14,11 @@ body {
    margin-left: auto;
 }
 .header__logo {
-    padding-top: 4px;
+   
 }
-
+.main__title {
+   
+}
 /* tag styles */
 .mtb__tag {
     margin-top: 20px;
@@ -81,6 +83,14 @@ body {
     
     .data__hor-line {
         background-color: var(--main-color);
+    }
+}
+@media screen and (max-width: 799px) {
+    .left-side-decor__data {
+        bottom: -22px;
+    }
+    .pop-up__close-btn {
+        margin-top: 10px;
     }
 }
 @media screen and (max-width: 599px) {

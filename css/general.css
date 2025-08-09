@@ -877,7 +877,8 @@ button {
         height: 44px;
         background-color: transparent;
 
-        margin-top: 10px;
+        margin-top: 16px;
+        margin-right: 17px;
     } 
     .menu__toggler-wrap {
         z-index: 5;

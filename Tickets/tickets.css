@@ -8,8 +8,11 @@
 
 /* Main title styles */
 .main__title {
-    margin-top: 39px;
-    margin-bottom: 40px;
+   margin-top: 39px;
+}
+
+.buy-tickets__wrap {
+    margin-top: 74px;
 }
 
 /* Tickets BLock Styles */
@@ -45,9 +48,6 @@
 
     grid-area: tel;
 }
-.buy-tickets__wrap {
-    margin-top: 40px;
-}
 
 /* Payment Methods styles */
 .buy-tickets__payment-methods {
@@ -64,6 +64,7 @@
 /* Price styles */
 .buy-tickets__price {
     grid-area: price;
+    margin-top: 35px;
 }
 /* Legend Styles */
 .price__legend {
@@ -114,7 +115,7 @@
     background: rgba(242, 192, 63, 0.1);
 }
 .table__item:last-child {
-    padding-top: 24px;
+    padding-top: 42px;
     padding-bottom: 24px;
 
     grid-template-areas: '. . item-1 . item-2 . item-3';
@@ -186,15 +187,16 @@ button.table-purple-button {
         ;
         
         grid-auto-rows: min-content;
-        grid-auto-columns: min-content;
+        grid-auto-columns: 1fr;
 
         row-gap: 40px;
+
+        width: 100%;
     }
     .buy-tickets__wrap > * {
         margin: 0;
 
         align-self: center;
-        justify-self: center;
     }
     .buy-tickets__payment-methods {
         display: grid;
@@ -206,8 +208,13 @@ button.table-purple-button {
         grid-auto-columns: min-content;
         column-gap: 40px;
         row-gap: 25px;
+        align-items: center;
+        justify-content: center;
 
-        margin: 0 0 0 54px;
+        padding-right: 10px;
+    }
+    .buy-tickets-text {
+        padding-left: 32px;
     }
     .payment-methods__item:nth-child(1n) {
         grid-column: 1 / 2;
@@ -221,25 +228,46 @@ button.table-purple-button {
     .row-2 {
         grid-area: row-2;
     }
+    .buy-tickets__question-phone, .buy-tickets__payment-methods {
+        align-self: center;
+        justify-self: end;
+    }
     .buy-tickets__question-phone {
         font-size: 18px;
-        margin-left: 39px;
+        padding-right: 20px;
     }
 }
 @media screen and (max-width: 799px) {
-    .price__legend, .table__item {
-        grid-template-columns: 120px 40px 80px 32px 80px 32px 80px;
-        padding-left: 16px;
-        padding-right: 16px;
+    .table__item {
+        padding-bottom: 18px;
+        padding-top: 18px;
     }
     .table__item:last-child {
-        grid-template-columns: 120px 21px 120px 32px 120px 32px 120px;
+        padding-top: 22px;
     }
     .buy-tickets__wrap {
         padding: 0 16px;
+        margin-top: 0;
     }
     .buy-tickets-text {
         width: 62.5vw;
+    }
+    .buy-tickets__price {
+        padding: 0 16px;
+        margin-top: 5px;
+    }
+    .main__title {
+        margin-top: 9px;
+        margin-bottom: 30px;
+    }
+    .pop-up__title {
+        margin-bottom: 48px;
+    }
+    .title-check-mark {
+        margin-bottom: 32px;
+    }
+    .pop-up-text {
+        margin-bottom: 35px;
     }
 }
 @media screen and (max-width: 599px) {
@@ -266,9 +294,15 @@ button.table-purple-button {
     }
     .buy-tickets-text {
         width: 90vw;
+        padding: 0;
     }
     .buy-tickets__wrap > * {
         align-self: start;
         justify-self: start;
+    }
+    .buy-tickets__question-phone, .buy-tickets__payment-methods {
+        align-self: unset;
+        justify-self: unset;
+        padding: 0;
     }
 }

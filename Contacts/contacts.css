@@ -45,6 +45,7 @@
 }
 .main__map * {
     width: 100%;
+    height: 100%;
 }
 .map__wrap {
     position: relative;
@@ -75,7 +76,10 @@
 }
 
 .contacts-form > fieldset:last-of-type {
-    margin-bottom: 106px;
+    margin-bottom: 49px;
+}
+#input-msg {
+    height: 93px;
 }
 
 @media screen and (max-width: 1449px) {
@@ -103,6 +107,27 @@
         margin-bottom: 24px;
         font-size: 32px;
         width: 87.5vw;
+    }
+}
+@media screen and (max-width: 799px) {
+    .main__title {
+        margin-top: 10px;
+        margin-bottom: 44px;
+    }
+    .map__map, .map__frame {
+        height: 34.668vh;
+    }
+    .main__second-title {
+        margin-bottom: 33px;
+    }
+    .pop-up__title {
+        margin-bottom: 16px;
+    }
+    #input-msg {
+        height: 93px;
+    }
+    .contacts-form > fieldset:last-of-type {
+        margin-bottom: 49px;
     }
 }
 @media screen and (max-width: 699px) {
