@@ -34,9 +34,6 @@ html {
 }
 
 /* Main block and main-wrap styles */
-.main {
-}
-
 .main-wrap {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
@@ -70,15 +67,10 @@ html {
     gap: 2.666em;
 }
 
-.about {
-}
 .about__item {
     display: flex;
     align-items: center;
     gap: 12px;
-}
-.about__icon {
-    /* width: 44px; */
 }
 .about__text {
     opacity: 0.74;
@@ -91,9 +83,6 @@ html {
 .new-line-text {
     display: block;
     margin-bottom: 5px;
-}
-.sup__text {
-    
 }
 .about__line {
     opacity: 0.4;
@@ -252,12 +241,21 @@ html {
     .wrap {
         padding-left: 16px;
         padding-bottom: 64px;
+
+        grid-template-rows: 9px repeat(2, min-content);    
     }
     .main-title-block {
         grid-column: 1 / -1;
+        margin-bottom: 29px;
     }
     .right-side-decor {
         display: none;
+    }
+    .about__item:last-child {
+        margin-top: 8px;
+    }
+    .main__buy-tickets-btn {
+        margin-top: 13.725vw;
     }
 }
 @media screen and (max-width: 499px) {
@@ -265,14 +263,15 @@ html {
         grid-column: 1 / -1;
     }
     .mtb__title {
-        margin-bottom: 40px;
-        margin-top: 8px;
+        margin-bottom: 0px;
+        margin-top: 14px;
     }
     .mtb__tag {
         margin-top: 13px;
     }
     .main__about {
         margin-top: 0px;
+        gap: 23px;
     }
 }
 @media screen and (max-width: 399px) {

@@ -1,9 +1,6 @@
 @import url('../css/general.css');
 @import url('../css/common-styles-white-pages.css');
 
-.main {
-
-}
 .main__title {
     margin-top: 18px;
     margin-bottom: 40px;
@@ -60,9 +57,6 @@
 
     gap: 48px;
 }
-.participants {
-    
-}
 
 .participants__item {
     display: grid;
@@ -76,9 +70,6 @@
     margin-top: 47px;
 }
 
-.participant-item {
-    
-}
 .participant-item__carousel {
     width: 448px;
     height: 580px;
@@ -116,11 +107,6 @@
 .participant-carousel__left-key {
     margin-right: 16px;
 }
-.participant__example {
-    
-}
-.participant-example {
-}
 .participant-example__model {
     width: 100%;
     height: 100%;
@@ -128,8 +114,6 @@
     transition: 380ms;
 
     flex: 1 0 auto;
-}
-.participant-carousel__right-key {
 }
 .participant__info {
     background-color: #f4f4f4;
@@ -188,6 +172,9 @@
 .participant__photo img {
     -o-object-fit: cover;
        object-fit: cover;
+
+    width: 100%;
+    height: 100%;
 }
 .participant__full-name {
     font-family: var(--second-font-family);
@@ -202,9 +189,6 @@
     letter-spacing: 2px;
     opacity: 0.32;
     text-transform: uppercase;
-}
-.participant__links {
-    
 }
 
 @media screen and (min-width: 2560px) {
@@ -325,6 +309,13 @@
         width: 93.75%;
 
         grid-row: 3 /4;
+
+        left: 0;
+        top: -40px;
+    }
+    .participant__photo {
+        width: 48px;
+        height: 48px;
     }
     .participant-item__style-wrap {
         grid-row: 1/2;
@@ -352,10 +343,6 @@
     }
     .wrap {
         padding: 0;
-    }
-    .carousel {
-        flex-flow: column nowrap;
-        gap: 24px;
     }
     .main__title {
         margin: 0 0 32px 16px;
@@ -388,6 +375,40 @@
     .carousel-pagnitation__item.active {
         background: linear-gradient(121.1deg, rgba(101, 78, 163, 0.87) 35.26%, rgba(95, 75, 139, 0.87) 88.11%);
         opacity: 1;
+    }
+    .participant-item__style {
+        white-space: normal;
+
+        top: 0;
+
+        transform: rotate(-90deg) translateX(-100%);
+        transform-origin: top left;
+
+        margin-top: 0;
+    }
+    .info__full-name-country {
+        padding: 16px 16px 0 16px;
+        gap: 8px;
+    }
+    .participant__full-name {
+        margin-top: 5px;
+    }
+    .info__wrap {
+        padding: 8px 16px 16px 72px;
+        gap: 80px;
+        justify-content: start;
+    }
+    .participant__links {
+        padding-top: 8px;
+    }
+    .people-links__wrap {
+        gap: 16px;
+    }
+    div.carousel {
+        gap: 23px;
+    }
+    .main__participants > div {
+        height: 62.353vh;
     }
 }
 @media screen and (max-device-width: 414px) and (max-device-height: 736px)

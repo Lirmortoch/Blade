@@ -306,18 +306,9 @@ button {
 }
 
 /* Footer and links styles */
-.footer {
-
-}
-.footer__social-links {
-}
-
 .social-links {
     display: flex;
     align-items: center;
-}
-.social-links__item {
-  
 }
 .social-links__item svg {
     width: 100%;
@@ -391,15 +382,15 @@ button {
     
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-
-    gap: 48px;
 }
 .big-carousel__wrap {
     width: 100%;
     overflow-x: auto;
+    gap: 48px;
 }
 .small-carousel__wrap {
     overflow-x: hidden;
+    gap: 0;
 }
 .carousel__wrap::-webkit-scrollbar {
     display: none;
@@ -457,7 +448,7 @@ button {
 }
 .buy-tickets-btn__arrow {
     background-color: var(--third-color);
-    width: 26.289%;
+    width: 29.389%;
     text-align: center;
     vertical-align: middle;
 }
@@ -1073,9 +1064,16 @@ button {
     .bfw {
         width: 119.792vw;
     }
+    .mobile-bfw {
+        width: 114.792vw;
+        top: 115px;
+    }
     .buy-tickets-btn {
         width: 274px;
         height: 68px;
+    }
+    .menu__wrap {
+
     }
 }
 @media screen and (max-width: 700px) {
@@ -1123,6 +1121,33 @@ button {
         position: absolute;
         margin-top: 10px;
         right: 0;
+    }
+
+    .menu__mobile-lang-switch {
+        margin: 0 0 0 0;
+        
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: -0.02em;
+
+        margin-bottom: 19px;
+    }
+    .menu__toggler {
+        margin: 0 0 19px 0;
+        padding-left: 8px;
+    }
+    .header__logo {
+        height: 72px;
+        margin-bottom: auto;
+    }
+    .header__menu {
+        padding-top: 119px;
+    }
+    .menu__nav {
+        gap: 25px;
+    }
+    .menu__wrap {
+        gap: 82px;
     }
 }
 @media screen and (max-width: 530px) {

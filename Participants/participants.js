@@ -1,24 +1,21 @@
-function setTopForStyles() {
+function setTopForStyles() {    
     document.querySelectorAll('.participant-item__style').forEach(item => {
-        item.style.top = `${(item.clientWidth + 2) / 2}px`;
+        if (window.innerWidth > 599) item.style.top = `${(item.clientWidth + 2) / 2}px`;
+        if (window.innerWidth < 600 && item.clientWidth > 250) {
+            item.style.width = 'fit-content';
+            item.style.left = '-18px';
+        }
     });
 }
 
 setTopForStyles();
-
-// if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-//     // код для мобильных устройств
-// } 
-// else {
-//     // код для обычных устройств
-// }
 
 function smallSliderNextSlide(e) {
     const closestElem = e.target.closest('.participant-carousel__right-key');
 
     if (!closestElem) return;
 
-    const carouselWrap = closestElem.parentElement.parentElement.querySelector('.participant-item__carousel');
+    const carouselWrap = closestElem.parentElement.parentElement.querySelector('.carousel__wrap.small-carousel__wrap');
 
     carouselWrap.scrollLeft += carouselWrap.clientWidth;
 }
@@ -27,7 +24,7 @@ function smallSliderPrevSlide(e) {
 
     if (!closestElem) return;
 
-    const carouselWrap = closestElem.parentElement.parentElement.querySelector('.participant-item__carousel');
+    const carouselWrap = closestElem.parentElement.parentElement.querySelector('.carousel__wrap.small-carousel__wrap');
 
     carouselWrap.scrollLeft -= carouselWrap.clientWidth;
 }
