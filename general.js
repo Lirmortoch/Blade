@@ -354,12 +354,17 @@ function createPopUp() {
             <div class="pop-up__block">
                 <div class='pop-up__wrap'>
                     <div class='pop-up__header'>
+                        <div class="pop-header__wrap">
+                            <div class="header__logo pop-up__logo">
+                                <img src="../img/logos/blade.svg" alt="site logo" class="header__logo">
+                            </div>
+                            <button class='pop-up__close-btn header-close-btn'>
+                                <div class='header-close-btn__wrap'></div>
+                            </button>
+                        </div>
                         <h2 class='pop-up__title pop-up-title pop-up-text'>
                             
                         </h2>
-                        <button class='pop-up__close-btn header-close-btn'>
-                            <div class='header-close-btn__wrap'></div>
-                        </button>
                     </div>
                     <div class='pop-up__main-part'>
                         

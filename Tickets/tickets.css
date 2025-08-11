@@ -278,6 +278,7 @@ button.table-purple-button {
             'question'
             'tel'
         ;
+        row-gap: 28px;
     }
     .buy-tickets__wrap > * {
         margin: 0;
@@ -285,12 +286,17 @@ button.table-purple-button {
     .buy-tickets__price {
         width: 100%;
         overflow-x: auto;
+        padding: 0;
+    }
+    .buy-tickets__question-phone {
+        margin-top: 28px;
     }
     .price__legend {
         padding-bottom: 0;
     }
     .price__table {
         border: none;
+        width: fit-content;
     }
     .buy-tickets-text {
         width: 90vw;
@@ -302,7 +308,21 @@ button.table-purple-button {
     }
     .buy-tickets__question-phone, .buy-tickets__payment-methods {
         align-self: unset;
-        justify-self: unset;
         padding: 0;
+    }
+    .main__buy-tickets {
+        gap: 25px;
+    }
+    .table__item, .price__legend {
+        grid-template-columns: 120px 40px 80px 70px 80px 70px 80px;
+    }
+    .table__item:first-child {
+        padding-top: 8px; /* 0px */
+    }
+    /* .table__item:first-child > .table__check {
+        padding-top: 8px;
+    } */
+    .table__item:last-child {
+        grid-template-columns: 120px 20px 120px 32px 120px 32px 120px;
     }
 }

@@ -835,7 +835,7 @@ button {
         margin-left: 25px;
     }
     .header__logo {
-        z-index: 6;
+        z-index: 4;
         width: 19.444%;
     }
     .header__logo img {
@@ -1075,6 +1075,9 @@ button {
     .menu__wrap {
 
     }
+    .pop-up__close-btn {
+        margin-top: 10px;
+    }
 }
 @media screen and (max-width: 700px) {
     .left-side-decor {
@@ -1084,6 +1087,7 @@ button {
 @media screen and (max-width: 599px) {
     .header {
         margin: 0 16px;
+        justify-content: space-between;
     }
 
     /* Carousel styles */
@@ -1102,10 +1106,22 @@ button {
 
     /* Pop up styles */
     .pop-up__wrap {
-        padding: 16px 16px 44px;
+        padding: 0px 0px 44px;
+    }
+    .pop-up__wrap > *:not(.pop-up__header) {
+        padding: 0 16px;
+    }
+    .pop-up-text {
+        padding-left: 16px;
     }
     .pop-up-text:not(.title-check-mark), .form {
         width: 90vw;
+    }
+    .pop-up-text:not(.title-check-mark) {
+        font-size: 24px;
+    }
+    .pop-up__title {
+        margin-top: 43px;
     }
     .form__radio-group {
         display: flex;
@@ -1115,12 +1131,25 @@ button {
         gap: 20px;
     }
     .pop-up__header {
-        position: relative;
+        display: grid;
+        grid-template-rows: repeat(2, min-content);
+        grid-template-columns: 1fr;
     }
-    .pop-up__header > .pop-up__close-btn {
-        position: absolute;
-        margin-top: 10px;
-        right: 0;
+    .pop-up__close-btn {
+        margin-top: 2px;
+    }
+    .pop-up__block {
+        overflow-y: auto;
+    }
+    .pop-header__wrap {
+        position: relative;
+        width: 95%;
+
+        display: flex;
+        
+        justify-content: space-between;
+        align-items: center;
+        flex-flow: row nowrap;
     }
 
     .menu__mobile-lang-switch {

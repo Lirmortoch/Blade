@@ -175,9 +175,6 @@ body {
     div.main__carousel {
         gap: 0;
     }
-    .main__judges {
-        padding-bottom: 24px;
-    }
 
     .judge-item {
         height: min-content;

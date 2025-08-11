@@ -13,12 +13,6 @@ body {
 .header__menu, .menu__toggler {
    margin-left: auto;
 }
-.header__logo {
-   
-}
-.main__title {
-   
-}
 /* tag styles */
 .mtb__tag {
     margin-top: 20px;
@@ -89,9 +83,6 @@ body {
     .left-side-decor__data {
         bottom: -22px;
     }
-    .pop-up__close-btn {
-        margin-top: 10px;
-    }
 }
 @media screen and (max-width: 599px) {
     .wrap {
@@ -101,5 +92,8 @@ body {
     .main__title {
         margin: 0 0 32px 16px;
         font-size: 32px;
+    }
+    .mtb__tag {
+        display: none;
     }
 }

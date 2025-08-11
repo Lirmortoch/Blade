@@ -132,7 +132,8 @@
 }
 @media screen and (max-width: 699px) {
     .main__wrap > *:not(.main__map) {
-        padding: 0 16px;
+        margin-right: 16px;
+        margin-left: 16px;
     }
     .main__wrap {
         padding: 0;
@@ -144,16 +145,29 @@
         gap: 32px;
     }
     .main__title {
-        margin-bottom: 33px;
+        margin: 10px 0 28px;
+        padding: 0 16px;
     }
     .main__second-title {
         font-size: 24px;
     }
     .main__map {
         margin: 40px 0 32px 0;
+        overflow-x: auto;
+        overflow-y: hidden;
         width: 100%;
     }
     .map__frame {
         display: none;
+    }
+    .main__map * {
+        width: unset;
+    }
+    .map__map {
+        width: 151.388vw;
+        height: 52.794vh;
+    }
+    .main__second-title {
+        margin-bottom: 39px;
     }
 }
