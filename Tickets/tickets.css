@@ -266,7 +266,7 @@ button.table-purple-button {
     .title-check-mark {
         margin-bottom: 32px;
     }
-    .pop-up-text {
+    .pop-up-text:not(.pop-up__title) {
         margin-bottom: 35px;
     }
 }
@@ -324,5 +324,22 @@ button.table-purple-button {
     } */
     .table__item:last-child {
         grid-template-columns: 120px 20px 120px 32px 120px 32px 120px;
+    }
+
+    h2.pop-up__title.pop-up-title:not(.title-check-mark) {
+        margin-bottom: 36px;
+        width: 98vw;
+    }
+    .tickets-form > fieldset {
+        margin-bottom: 41px;
+    }
+    .tickets-form > fieldset:last-of-type {
+        margin-bottom: 36px;
+    }
+    .pop-up__title.title-check-mark {
+        margin-bottom: 30px;
+    }
+    .pop-up__close-btn {
+        margin-top: 4px;
     }
 }

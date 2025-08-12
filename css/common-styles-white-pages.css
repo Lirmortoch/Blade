@@ -96,4 +96,7 @@ body {
     .mtb__tag {
         display: none;
     }
+    .title-check-mark svg {
+        width: 100%;
+    }
 }

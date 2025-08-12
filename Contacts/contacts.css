@@ -170,4 +170,16 @@
     .main__second-title {
         margin-bottom: 39px;
     }
+    .pop-up__title {
+        margin-bottom: 4px;
+    }
+    .contacts-form > fieldset:last-of-type {
+        margin-bottom: 43px;
+    }
+    .form__submit-btn {
+        margin-left: 4px;
+    }
+    .title-check-mark {
+        margin-bottom: 30px;
+    }
 }
