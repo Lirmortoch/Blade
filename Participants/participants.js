@@ -1,11 +1,2 @@
-function setTopForStyles() {    
-    document.querySelectorAll('.participant-item__style').forEach(item => {
-        if (window.innerWidth > 599) item.style.top = `${(item.clientWidth + 2) / 2}px`;
-        if (window.innerWidth < 600 && item.clientWidth > 250) {
-            item.style.width = 'fit-content';
-            item.style.left = '-18px';
-        }
-    });
-}
-
-setTopForStyles();
+function setTopForStyles(){document.querySelectorAll('.participant-item__style').forEach(item=>{if(window.innerWidth>599)item.style.top=`${(item.clientWidth + 2) / 2}px`;if(window.innerWidth<600&&item.clientWidth>250){item.style.width='fit-content';item.style.left='-18px'}})}
+setTopForStyles()
