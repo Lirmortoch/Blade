@@ -86,7 +86,7 @@ function createPagination() {
 }
 createPagination();
 
-const carouselWrap = document.querySelector('.carousel__wrap');
+const carouselWrap = document.querySelector('.carousel__wrap.big-carousel__wrap');
 let itemCount = 1;
 
 function mainSliderNextSlide(e) {
@@ -148,6 +148,28 @@ function mainSliderPrevSlide(e) {
 
 document.addEventListener('click', mainSliderNextSlide);
 document.addEventListener('click', mainSliderPrevSlide);
+
+function smallSliderNextSlide(e) {
+    const closestElem = e.target.closest('.small-carousel__right-key');
+
+    if (!closestElem) return;
+
+    const carouselWrap = closestElem.parentElement.parentElement.querySelector('.carousel__wrap.small-carousel__wrap');
+
+    carouselWrap.scrollLeft += carouselWrap.clientWidth;
+}
+function smallSliderPrevSlide(e) {
+    const closestElem = e.target.closest('.small-carousel__left-key');
+
+    if (!closestElem) return;
+
+    const carouselWrap = closestElem.parentElement.parentElement.querySelector('.carousel__wrap.small-carousel__wrap');
+
+    carouselWrap.scrollLeft -= carouselWrap.clientWidth;
+}
+
+document.addEventListener('click', smallSliderNextSlide);
+document.addEventListener('click', smallSliderPrevSlide);
 
 // For swipe and pagination (не хватает учёта большего свайпа)
 function swipeSliderToRight() {
